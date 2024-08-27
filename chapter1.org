@@ -1,0 +1,477 @@
+#+ TITLE: Chapter 1 - Networking today
+#+ AUTHOR: Emmanuel Parreno (Emman)
+#+ DESCRIPTION: This is an outline of the chapter 1 of Computer Networking 1 in BSU - MALVAR
+
+* Chapter 1 - Networking today
+** [1.0.2] Objective:
+|---------------------------------------+----------------------------------------------------------------------------------------------------------------------|
+| Topic Title                           | Topic Objective                                                                                                      |
+|---------------------------------------+----------------------------------------------------------------------------------------------------------------------|
+| Networks affect Our Lives             | Explain how networks affect out daily lives                                                                          |
+| Network Components                    | Explain how host and network devices are used                                                                        |
+| Network Representation and Topologies | Explain network representations and how they are used in network topologies                                          |
+| Common Types of Networks              | Compare the characteristics of common types of networks                                                              |
+| Internet Connections                  | Explain how LANs and WANs interconnect to the internet.                                                              |
+| Reliable Networks                     | Describe the four basic requirements of a reliable network                                                           |
+| Network Trends                        | Explain how trends such as  BYOD, online collaboration, video, and cloud computing are changing the way we interact. |
+| Network Security                      | Identify some basic security threats and solution for all networks                                                   |
+| The IT Professional                   | Explain employment oppotunities in the networking field                                                              |
+|---------------------------------------+----------------------------------------------------------------------------------------------------------------------|
+
+   
+*** [1.0.3] Download packet tracer
+
+*** [1.0.4] Getting started with Cisco Packet tracer
+
+*** [1.0.5] Logical and Physical Mode Exploration
+    https://contenthub.netacad.com/courses/itn-dl/_common/1.0.5-packet-tracer---logical-and-physical-mode-exploration.pka
+    basics of networking
+
+** [1.1] Networks connect us 
+    Computer networking, including the internet, has impacted how the world works. 
+    Individual lifestyles are even affected.
+    Physical limitations became less irrelevant.
+    
+*** [1.1.2]
+    - Cisco is founded in 1997
+    - Other cisco sht... (including ads)
+
+** [1.2] Network Components
+*** [1.2.1] Host Roles
+    Global communities are tied by the internet.
+    A computer must first be connected to the internet inorder to participate.
+    
+    Hosts
+	- all computers that are connected to a network and participate directly in network communication
+	- can also be called 'end devices'
+	- some hosts are 'clients'
+	- specifically refers to devices on the network that are ASSIGNED A NUMBER for communication purposes.
+	  - The number identifies the host within a network
+	  - the number is called the Internet Protocol (IP) address
+
+    IP Address
+	- Identifies the host and the network to which the host is attached
+
+    Servers
+	- are COMPUTERS WITH SOFTWARE that ALLOW THEM TO PROVIDE INFORMATION
+	  - Ex. of server software:
+	     web server
+	     database server
+
+    Clients
+	- have software for requesting and displaying information obtained from the server
+	  - Ex . of client software
+	    Web Browser
+
+    - Types of server software:
+      |-------+----------------------------------------------------------------------------------------------------------------------------------------------|
+      | Type  | Description                                                                                                                                  |
+      |-------+----------------------------------------------------------------------------------------------------------------------------------------------|
+      | Email | runs email server software (microsoft outlook, etx). Used to access email on the server.                                                     |
+      | Web   | runs web server software. Used to Access the webpages on the server                                                                          |
+      | File  | stores corporate and user files in a central location. Client devices access these files using file explorers such as Windows' File Explorer |
+      |-------+----------------------------------------------------------------------------------------------------------------------------------------------|
+
+    - Takeaways
+      |--------------------------------------------------------------------------|
+      | TAKEAWAYS                                                                |
+      |--------------------------------------------------------------------------|
+      | All servers are hosts, but not all hosts are servers (same with clients) |
+      |--------------------------------------------------------------------------|
+      | There are three types of server software: Email, Web, File               |
+      |--------------------------------------------------------------------------|
+      | All server software has a (or multiple) pairing client software          |
+      |--------------------------------------------------------------------------|
+      | Client and server network requires seperate computers for each           |
+      |--------------------------------------------------------------------------|
+	  
+*** [1.2.2] Peer-to-Peer
+    Peer-to-peer network is used in small businesses an homes.
+    Computers function as SERVERS AND CLIENTS on the network.
+
+    | Advantages of peer-to-peer networking                                  |
+    |------------------------------------------------------------------------|
+    | easy to setup                                                          |
+    | less complex                                                           |
+    | lower costs since no dedicated servers are required                    |
+    | can be used for simple tasks (transferring files and sharing printeres |
+    |------------------------------------------------------------------------|
+    
+    | Disadvantages of peer-to-peer networking                                                       |
+    |------------------------------------------------------------------------------------------------|
+    | No centralized administration (no servers to mingle with if you want to control the data etc.) |
+    | Not as secure *any computer in the network can access or pretend to be a server                |
+    | not scalable                                                                                   |
+    | multiple roles in devices may hinder their performance                                         |
+    |------------------------------------------------------------------------------------------------|
+
+*** [1.2.3] End Devices
+    To distiguish one device from another, end devices are given unique addresses.
+    When a device initiates communication, it uses the address of the devices to deliver the message.
+
+*** [1.2.4] Intermediary Devices
+    connect the individual end devices to the network.
+    they can connect multiple networks together to create an internetwork.
+    provides connectivity and ensure that data flows across the network.
+    these devices use the device addresses and the information about the internetwork to determine the path the message will take.
+
+    #+NAME: Intermediary Devices
+    |--------------------|
+    | Wireless router    |
+    | LAN switch         |
+    | router             |
+    | multilayer switch  |
+    | firewall appliance |
+    |--------------------|
+    
+*** [1.2.5] Network media
+    where communications transmit across
+    provides a channel for data to travel from source to destination.
+
+    #+NAME: Primary types of modern network media
+    | Name                                  | Types       | Definition                                   |
+    |---------------------------------------+-------------+----------------------------------------------|
+    | Metal wires within cables             | copper      | data is encoded into electrical pulses       |
+    | Glass or plastic fibers inside cables | fiber-optic | data is encoded in pulses of light           |
+    | Wireless transmission                 | Wireless    | through frequencies or electromagnetic waves |
+    |---------------------------------------+-------------+----------------------------------------------|
+
+**** criteria for choosing network media
+    price
+    distance
+    environment to be installed in
+    what speed must the data be transmitted
+
+    
+** [1.3] Network Representations and Topologies
+
+*** [1.3.1] Network Representations
+    (TOPOLOGY diagram)
+    are used to represent networks: the components, what the network looks like, where are specific components located.
+    provides a way to easily understand how devices connect to a large network
+
+    
+**** Additional terminology
+    NIC (network interface card)
+    - physically connects the end device to the network
+
+    Physical port
+    - where the network media connects
+    - a connector or outlet
+
+    Interface
+    - specialized ports that connect to individual networks
+    - because routers connect networks, its ports are called network interfaces.
+
+*** [1.3.2] Topology diagrams
+    mandatory diagrams for networks
+    a visual map of how networks are connected
+    There are two types of diagrams: physical and logical.
+
+
+    Physical topology diagrams
+    illustrate the physical location of intermediary devices and cable installation
+
+    Logical topology diagrams
+    illustrate the devices, ports, and the addressing scheme of the network.
+    shows which devices are connected to intermediary devices and what network media is used
+
+    
+
+** [1.4] Common types of networks
+*** [1.4.1] Networks of many sizes
+    internet
+    largest network in existence
+    means "network of networks"
+    
+    | type of network                     | definition                                                                                                      |
+    |-------------------------------------+-----------------------------------------------------------------------------------------------------------------|
+    | small home networks                 | connect a few computers to each other and to the internet                                                       |
+    | Small Office and Home Office (SOHO) | allows computers in a home or remote office to access corporate resources, or centralized, shared resources     |
+    | medium to large networks            | can have many locations with hundreds or thousands of interconnected hosts (used by corporations and companies) |
+    | world wide networks                 | network of networks, connects hundreds of millions of computers worldwide                                       |
+
+*** [1.4.2] LANs and WANs
+    network infrastuctures vary greatly in terms of:
+    1. size of area covered
+    2. number of users connected
+    3. number and types of services available
+    4. area of responsibility
+
+    #+NAME: comon types of network infrastuctures
+    | type                       | definition                                                                   |
+    |----------------------------+------------------------------------------------------------------------------|
+    | LANs (local area networks) | (provides to users and devices) within a small geographic area               |
+    |                            | used in departments within enterprises, homes, or a small business network   |
+    |                            | provides high-speed bandwidth within the network                             |
+    |                            | usually administered by an individual or an organization                     |
+    |                            | enforces its own security and access controls                                |
+    |                            |                                                                              |
+    | WANs(wide area networks)   | (connects networks) wide geographic area                                     |
+    |                            | typically owned by a large corporation or telecommunication service provider |
+    |                            | slower than LANs                                                             |
+    |                            | administered by multiple service providers                                   |
+    |                            | interconnect LANs within a wide geographic area                              |
+    |                            |                                                                              |
+    |----------------------------+------------------------------------------------------------------------------|
+
+    
+*** [1.4.3] the internet
+    a.k.a internetwork -  collection of interconnected networks
+    not owned by any individual or group
+    organizations that help maintain the structure and stardardization of internet protocols and processes:
+	1. Internet Engineering Task Force (IETF)
+	2. Internet Corporation for Assigned Names and Numbers (ICANN)
+	3. Internet Architecture Board (IAB)
+
+*** [1.4.4] Intranets and Extranets
+    intranet
+    private connections of LANs ans WANs that belongs to a private organization
+    designed to only be accessible to the organization's members, employees, etc.
+
+    extranet
+    for people outside the organization, to give them secure and safe access.
+    
+** [1.5] Internet connections
+
+*** [1.5.1] Internet access technologies
+    how do you actually connect users and organizations to the internet?
+
+    home users, remote workers, and small offices require a connection to an ISP. The following are the popular choices:
+    - broadband cable
+    - broadband digital subscriber line (DSL)
+    - wireless WANs
+    - mobile services
+
+    Popular choices for businesses or organization (faster business-class interconnections):
+    - business digital subscriber line (DSL)
+    - leased lines
+    - metro ethernet
+      
+     
+*** [1.5.2] Home and small office internet connections
+    #+name: common connections for home and small offices
+    | type of connection | description                                                                                                             |
+    |--------------------+-------------------------------------------------------------------------------------------------------------------------|
+    | Cable              | typically offered by cable television service providers                                                                 |
+    |                    | the internet data signal is transmitted in the same cable that provides the cable television                            |
+    |                    | high-bandwidth, high-availability, always-on connection to the internet                                                 |
+    |                    |                                                                                                                         |
+    | DSL                | Digital subscriber line                                                                                                 |
+    |                    | high bandwidth, high-availability, always-on connection                                                                 |
+    |                    | runs over a telephone line                                                                                              |
+    |                    | home and small offices connect to the internet using ADSL(Asymmetrical DSL) (download speed is faster than upload speed |
+    |                    |                                                                                                                         |
+    | cellular           | uses a cellphone to connect to the internet                                                                             |
+    |                    | performace is limited by the phone and the cellular tower it is connected to                                            |
+    |                    |                                                                                                                         |
+    | satellite          | availability is the benefit (can get internet connection in hard to reach areas)                                        |
+    |                    | require a clear line of sight to the satellite                                                                          |
+    |                    |                                                                                                                         |
+    | dial-up telephone  | an inexpensive option                                                                                                   |
+    |                    | uses any phone and a modem                                                                                              |
+    |                    | low bandwidth                                                                                                           |
+    |                    | useful for mobile access while travelling                                                                               |
+    |--------------------+-------------------------------------------------------------------------------------------------------------------------|
+
+    ** The choice of connection varies depending on the geographical location and the service provider availability
+
+*** [1.5.3] Businesses internet connections
+    businesses require higher bandwidths, sooo...
+    #+name: common connection options for businesses
+    | type of connection    | description                                                                   |
+    |-----------------------+-------------------------------------------------------------------------------|
+    | dedicated lease lines | reserved circuits within the service provider's network                       |
+    |                       | connect geographically seperated offices for private voice or data networking |
+    |                       | rented in a monthly or yearly rate                                            |
+    |                       |                                                                               |
+    | metro ethernet        | Ethernet WAN                                                                  |
+    |                       | extends LAN technology into WAN                                               |
+    | business DSL          | has various formats                                                           |
+    |                       | popular choice is SDSL (symmetrical DSL) - same download and upload speeds    |
+    |                       |                                                                               |
+    | satellite             | can provide solutions when wired connections is not available                 |
+    |-----------------------+-------------------------------------------------------------------------------|
+
+*** [1.5.4] the converging network
+    | type                          | description                                                                                 |
+    |-------------------------------+---------------------------------------------------------------------------------------------|
+    | traditional seperate networks | each network are seperate                                                                   |
+    |                               | a network is not connected to others because it has a dedicated function                    |
+    |                               | telephone network for communication, data for data, etc.                                    |
+    |                               |                                                                                             |
+    | converged networks            | seperate networks converge                                                                  |
+    |                               | capable of delivering data, voice, and video over many types of devices in the same network |
+    |                               | uses the same set of rules and agreements as the traditional seperate networks              |
+    |                               | carry multiple services into one network                                                    |
+    |                               |                                                                                             |
+
+** [1.6] Reliable networks
+
+*** [1.6.1] Network architecture
+    this term refers to, in some context, to the technologies that support the infrastuctures and the programmed services and rules, or protocols, that move the data across the network
+
+    4 basic characteristics to meet user expectation when it comes to network tolerance
+
+    1. Fault tolerance
+    2. Scalability
+    3. Quality of service (QoS)
+    4. Security
+
+*** [1.6.2] Fault tolerance
+    what is a fault tolerant network?
+
+    a network that minimizes data loss during transit
+    limits the affected devices when devices fail
+    allows quick recovery of data/routes
+    has redundancy (multiple paths between source and destination to help when one path fails)
+
+    packet switching
+    splits traffic into packets that are routed over a shared network
+    allows redundancy
+
+*** [1.6.3] Scalability
+    what is a scalable network?
+
+    a network that is able to quickly expand to support new users and applications(without degrading performace)
+    designers accept standards and protocols
+    
+    
+*** [1.6.4] QoS (quality of service)
+    an increasing requirement of today
+
+    congestion
+    when the demand for the bandwidth exceeds the amount available
+
+    when congestion happens, the devices will hold the packets until it is able to be transmitted to its destination
+    webpages are usually low in priority, while voice over IP is high priority
+
+    
+*** [1.6.5] Network security
+    network infrastucture security and information security
+
+    | type                                    | description                                                                                   |
+    |-----------------------------------------+-----------------------------------------------------------------------------------------------|
+    | network infrastructure security         | includes physically securing the devices that provide network connectivity                    |
+    |                                         | prevents unautorized access to the management software that resides in the networking devices |
+    |                                         |                                                                                               |
+    | information security                    | protecting the information stored in the packets                                              |
+    |-----------------------------------------+-----------------------------------------------------------------------------------------------|
+
+    |-----------------------------------------+------------------------------------------------------------|
+    | achieving the goals of network security | description                                                |
+    |-----------------------------------------+------------------------------------------------------------|
+    | confidentiality                         | only the authorized can access the data                    |
+    | integrity                               | information has not be altered, from origin to destination |
+    | availability                            | assures timely and reliable access to autorized users      |
+    |-----------------------------------------+------------------------------------------------------------|
+
+** [1.7] Network trends
+*** [1.7.1] Recent trends
+    several networking trends
+    - bring your own device 
+    - online collaboration
+    - video communications
+    - cloud computing
+
+*** [1.7.2] Bring your own device (BYOD)
+    enables users to bring their own personal device to access information and communicate across a business or campus network
+    means by any device, with any ownership, used anywhere
+
+*** [1.7.3] Online colaboration
+    networks enabled collaboration with no regard to the physical distance
+
+*** [1.7.4] Video communications
+    video used for communications
+    a powerful tool for communication (video conferencing)
+
+*** [1.7.6] Cloud computing
+    one of the ways we can store data
+    allows us to create backups in servers over the internet
+    is possible because of data centers
+
+    data centers
+    are facilities that are used to house computer systems and related components
+    can occupy a room of a building, one or more floors, or even a whole warehouse.
+    very expensive to build and maintain
+
+    #+name: types of clouds
+    | type             | description                                                                  |
+    |------------------+------------------------------------------------------------------------------|
+    | public clouds    | made available to the general population                                     |
+    |                  | mostly pay-per use                                                           |
+    |                  | uses the internet to provide service                                         |
+    |                  |                                                                              |
+    | private clouds   | the services in this cloud is intended for a specific organization or entity |
+    |                  | expensive to build and maintain                                              |
+    |                  | can be set up using the organization's private network                       |
+    |                  | can also be a third-party service with strict access security                |
+    |                  |                                                                              |
+    | hybrid clouds    | made up of two or more clouds (e.g. part private, part public)               |
+    |                  | each part remains as a distinct object but connected by the architecture     |
+    |                  | users have degrees of access based on user access rights                     |
+    |                  |                                                                              |
+    | community clouds | clouds that are customized for the community                                 |
+    |                  | exclusive to use by specific organizations or entities                       |
+    |------------------+------------------------------------------------------------------------------|
+
+*** [1.7.7] technology trends in the home
+    smart home technology
+    integrated into everyday appliances
+    
+*** [1.7.8] powerline networking
+    integrating networking with powerline(electricity, outlets)
+    not a substiture for dedicated network cabling but an alternative when data network cables are not accessible or wireless connections are not possible or effective
+    
+*** [1.7.9] wireless broadband
+    wireless internet service provider (WISP)
+    an ISP that connects subscribers to a designated access point using wireless technology (usually a hotspot
+    can be found in home wireless local area networks (WLAN)
+    commonly found in rural areas where DSL or cable services are not available
+    
+** [1.8] Network security
+
+*** [1.8.1] Security threats
+    #+name: several external threats
+    | threat name                   | description                                                   |
+    |-------------------------------+---------------------------------------------------------------|
+    | viruses, worms, trojan horses | contains malicious code or software running on a user device  |
+    |                               |                                                               |
+    | spyware and adware            | secretly collects data about the user                         |
+    |                               |                                                               |
+    | zero-day attacks              | attacks that happen on the first day a vulnerability is known |
+    |                               |                                                               |
+    | threat actor attacks          | malicious person attacks user devices or network resources    |
+    |                               |                                                               |
+    | denial of service attacks     | slow or crash applications and processes in a network device  |
+    |                               |                                                               |
+    | data interception and theft   | captures private information from an organization's network   |
+    |                               |                                                               |
+    | identity theft                | steals login credentials to steal data                        |
+    |-------------------------------+---------------------------------------------------------------|
+
+    internal threats include the acts in which an 'insider' does malicious things to the network or some sht
+
+*** [1.8.2] security solutions
+    basic security components for a home or small office network
+
+    antivirus and antispyware
+    - protect end devices from getting infected with malicious software
+
+    firewall filtering
+    - blocks unautorized access into and out a network
+    - includes host-based firewalls
+
+    #+name: network security in larger networks
+    | name                               | description                                                                 |
+    |------------------------------------+-----------------------------------------------------------------------------|
+    | dedicated firewall systems         | more advanced firewalls that filter large amounts of traffic                |
+    |                                    |                                                                             |
+    | access control lists(ACL)          | filters access and traffic forwading based on IP addresses and applications |
+    |                                    |                                                                             |
+    | intrusion prevention systems (IPS) | identifies fast spreading threats such as zero-day or zero-hour attacks     |
+    |                                    |                                                                             |
+    | virtual private networks (VPNs)    | provide secure access into an organization for remote                       |
+    |------------------------------------+-----------------------------------------------------------------------------|
+
+    
