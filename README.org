@@ -1,0 +1,10 @@
+* Cisco 1 course notes
+A repository to save my notes for Cisco 1.
+
+** Contents:
+|---------+-------------------------------------------|
+| chapter | description                               |
+|---------+-------------------------------------------|
+|       1 | Networking Today                          |
+|       2 | Basic switch and end device configuration |
+|---------+-------------------------------------------|
