@@ -111,7 +111,7 @@
 *** [2.4.3] configuring passoword
     - syntax:
       + configuring the console port
-	#+begin src terminal
+	#+begin_src cisco
 	# conf t
 	(config)# line console 0
 	(config-line)# password PASSWORDHERE
@@ -217,4 +217,29 @@
     - SVIs (switch virtual interfaces)
       + a virtualized interphase because of the lack of physical hardware on the device associated with an interface
 ** Configure IP Addressing
-*** [2.7.1] Manual IP Adress Configuration for End Devices
+*** [2.7.1] Manual IP Address Configuration for End Devices
+    - IPv4 addresse information can be entered to devices manually or automatically (using DHCP)
+    - DNS server addresses are the IPv4 and IPv6 addresses of the Domain Name System (DNS servers)
+      + used to translate IP adresses to domain name
+*** [2.7.2] Automatic IP Address Configuration for End Devices
+    - default
+    - uses DHCP
+      + enables automatic IPv4 adress configuration for every end device that is DHCP-enabled
+      + used to obtain a IP address automatically and Obtain DNS server address automatically
+      + IPv6 uses DHCPv6 and SLAAC (Stateless Address Autoconfiguration)
+*** [2.7.4] Switch virtual interface configuration
+    - to connect to a switch remotely, an IP address and a subnet mask are required to be configured on the SVI
+    - commands to set the ip address and subnet mask manually 
+      #+begin_src cisco
+	(config)# interface vlan 1
+	(config-if)# ip address IPADDRESSHERE SUBNETMASKHERE
+	(config-if)# no shutdown
+      #+end_src
+*** other
+    - How to find the subnet?
+      + IP: 192.168.0.10
+      + subnet is the representation that distiguishes hosts from the network.
+      + if the subnet mask is: 255.255.255.0
+	- then the subnet of the address is 192.168.0.0
+      + if the subnet mask is: 255.255.0.0
+	- then the subnet is: 192.168.0.0
