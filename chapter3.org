@@ -356,3 +356,55 @@
     - international telecommunications union-telecommunication standardization sector (ITU-T)
       - one of the largest and oldest standards organizaions
       - defines standards for video compression, internet protocol television (IPTV), and broadband communications (DSL)
+
+	
+** [3.5] Reference models
+
+*** benefirs of using a layered model
+    - models are used to visualized thinking about a network
+    - there are two layered models that are used to descibe network operations:
+      + OSI reference model
+      + TCP/IP reference model
+    [[./media/REFERENCEMODS.png]]
+
+**** the OSI reference model
+    - provides and extensive list of functions and services that can occue at each layer
+    - provides consistency with all types of network protocols and se4vices by describing what must be done at a pareticulat layer
+    - APSTNDP!
+    #+NAME: OSI REFERENCE MODEL
+    | oso model layer  | description                                                                                                                                                                          |
+    |------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | 7 - application  | contains protocols used for process-toprocess communications                                                                                                                         |
+    |                  |                                                                                                                                                                                      |
+    | 6 - presentation | provides common representation of the data transferred between application layer services                                                                                            |
+    |                  |                                                                                                                                                                                      |
+    | 5 - session      | provices services to the presentation layer to organize its dialogue and to manage dta exchange                                                                                      |
+    |                  |                                                                                                                                                                                      |
+    | 4 - transport    | defines services to segment, transfer, and reassemble, the data over the network indentified end devices                                                                             |
+    |                  |                                                                                                                                                                                      |
+    | 3 - network      | provices services to exchange the individual pieces of data over the network between identified end devices                                                                          |
+    |                  |                                                                                                                                                                                      |
+    | 2 - data link    | describe methods for exchanging data frames between devices over a common media                                                                                                      |
+    |                  |                                                                                                                                                                                      |
+    | 1 - physical     | describe the mechanical, electrical, functional, and procedural means to activate, maintain, and deacticate physical connections for a bit transmissionto and from a  network device |
+    |                  |                                                                                                                                                                                      |
+    |------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+
+**** TCP/IP MODEL
+    - aka the internet model
+    #+NAME: TCP/IP protocol model
+    | TCP/IP model layer | desc                                                                   |
+    |--------------------+------------------------------------------------------------------------|
+    | 4 - application    | represents data to the user, plus encoding, and dialog control         |
+    |                    |                                                                        |
+    | 3 - transport      | supports communication between various devices across diverse networks |
+    |                    |                                                                        |
+    | 2 - internet       | determines th best path through the network                            |
+    |                    |                                                                        |
+    | 1 - network access | controls the hardware devices and media that make up the network       |
+    |--------------------+------------------------------------------------------------------------|
+
+*** [3.5.4] comparison
+    [[./media/TCPOSI.png]]
+    
