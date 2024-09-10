@@ -408,3 +408,12 @@
 *** [3.5.4] comparison
     [[./media/TCPOSI.png]]
     
+    - OSI layer 3, network layer, maps directly to the internet later (2nd layer of TCP/IP model)
+      + used to descibe protodcols that address and route messages through an internetwork
+    - transport layer
+      + describes general services and functions that provide ordered and reliable delivery opf data betwen source and destination hosts
+    - application layer and application, presentation, session layers
+      + osi used as references for applicaiton software devs and vendors to produce applicaitons that operate on networks
+      + tcp/ip provide specific functionality to a variety of end user application
+    - ose model seperates the data link layer fromthe physcial layer (commonly used when referring to these lower layers)
+      
