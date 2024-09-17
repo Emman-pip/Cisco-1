@@ -285,7 +285,7 @@
 
 ****** messaging
     - ICMPv4
-      + internet dcontrol messge protocol
+      + internet control messge protocol
       + provides feedback from a destination host to a source about erres in packet delivery
     - ICMPv6
       + ICMP for IPv6
@@ -417,3 +417,79 @@
       + tcp/ip provide specific functionality to a variety of end user application
     - ose model seperates the data link layer fromthe physcial layer (commonly used when referring to these lower layers)
       
+** [3.6] Data Encapsulation
+*** [3.6.1] Segmenting messages
+    - approach to divide data into smaller, more manageable pieces to send over the network
+    - dividing a stream of data into smaller units for transmission over the network
+    - necessary in TCP/IP because data is sent through individual IP packets
+**** advantages of segmenting messages
+    - increases speed
+      + large amounts of data can be sent through the network without typing up a communications link
+      + allows conversations between the network to be interleaved (multiplexing)
+    - increases efficiency
+      + if a single segment fails to reach its destination, only that segment needs to be transmitted
+*** [3.6.2] Sequencing
+    - the process to ensure that a message gets to the right destinatin and can be reassemnled into the content of the original message
+    - usually handled by the TCP
+*** [3.6.3] Protocol data units (PDU)
+    - PDU is the form a piece of data takes at any layer of the network
+    - UDP PDUs are called 'datagrams' or 'IP datagrams
+**** Types of PDU
+    - Data
+      + at the application layer
+    - Segment
+      + at the transport layer
+    - Packet
+      + at the network layer
+    - Frame
+      + at the data link layer
+    - Bits
+      + at the physical layer
+**** encapsulation process
+      + information added to data as it is passed down the protocol stack
+      [[./media/ENCAPSULATE.png]]
+
+** [3.7] Data access
+*** [3.7.1] Addresses
+    - directs where messeges go
+    - handles by the network and data link laters (delivering dat from src. to dest.)
+      [[./media/DATALINK.png]]
+**** Network and data link layer source and destination addresses
+    - Network layer src. and dest. addresses
+      + responsible for delivering the IP packet form original source to the final destination (remote or local)
+    - Data link layer src. and dest. addresses
+      + responsible for delivering the data link frame from one NIC to another NIC on the same network
+*** [3.7.2] Layer 3 logical address
+    - layer 3 = network layer
+      [[./media/LAYER3.png]]
+**** IP address
+    - logical address used to deliver the IP packet from original source to the final destination
+***** IP packet contains the following
+	- source IP address
+	- destination IP address
+***** IP addresses contain two parts
+	- Network portion (IPv4) or Prefix (IPv6)
+	  + left-most part of the address
+	  + all devices on the same networ will have the same network portion of the address
+	- Host portion (IPv4) or Interface ID (IP6)
+	  + the remaining part of the address that identifies the specific device on the network
+	  + unique for each device or interface onthe network
+	*** the subnet mask (IPv4) or prefix-length(IPv6) is used to identify the network portion of an IP address from the host portion
+*** [3.7.4] Role of the Data link (Layer 2) layer addresses: Same IP Network
+    - when the sender and receiver of the IP packet are ont he same network, the data link frame is sent directly to the receiving device
+    - on anethernet network, data link addresses are known as Ethernet Media Access Control (MAC) addresses
+**** MAC (Media Access Control) addresses
+    - are physically embedded on the ethernet NIC
+***** types
+	- source MAC address
+	  + Ethernet MAC address of the sending device
+	- destination MAC address
+	  + when the receiving device is on a different network, the sending device will use the ethernet MAC address of the default gateway or router
+*** [3.7.8] Data link (layer 2) addresses
+    - purpose is of the data link address is to deliver the data link address is to deliver the data link frame from one network interface to another network interface on the same network
+    - before an IP packaet can be sent over a wired or wireless network, it MUST BE ENCAPSULATE IN A DATA LINK FRAME, so it can be transmitted over the physical medium
+**** IP packet is encapsulated in a data link frame that contains the following information
+    - Source data link address
+      + physical address of the NIC (sender)
+    - Destination data link address
+      + physical address of the NIC (receiver)
