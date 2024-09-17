@@ -61,8 +61,8 @@
     |------------------------------+------------------------------------------------------------+----------------|
     | subconfig mode               | desc                                                       | prompt         |
     |------------------------------+------------------------------------------------------------+----------------|
-    | line configuration mode      | Used to configure console, ssh, telnet, or AUX connections | (config-line)* |
-    | Interface configuration mode | used to configure a switch port or router netwok interface | (config-if)*   |
+    | line configuration mode      | Used to configure console, ssh, telnet, or AUX connections | (config-line)# |
+    | Interface configuration mode | used to configure a switch port or router netwok interface | (config-if)#   |
     |------------------------------+------------------------------------------------------------+----------------|
 
 *** [2.2.4] Navigate between IOS modes
@@ -161,11 +161,23 @@
 ** [2.5] Save configurations
 
 *** [2.5.1] Configuration files
+
+    - storage devices in computers
+      + RAM
+	- losses data when it losses power
+	- suitable for faster processing (read and writes)
+	- stored running config
+      + NVRAM (non-volatile ram)
+	- does not lose data when powere losses
+	- stores startup files
+    - process of booting (in memory)
+      + copies startup config to RAM
+
     - there are two system files that save device configuration
       + startup-configuration
 	- stored configuration, saved in NVRAM
 	- contains instructions that will be carried by the device upon startup, boot, or reboot
-	- does not lose its content when the device is turned off
+	- DOES NOT lose its content when the device is turned off
 	  
       + running-configuration
 	- Stored in RAM (random access memory)
@@ -180,7 +192,23 @@
     - to save the running-config use the following command:
       #+begin_src cisco
 	# copy running-config startup-config 
+	;; SHORTCUT
+	# copy run start
+	;; SHORTCUT (shorter) same as copy run startup
+	# write
       #+end_src
+
+      - FLASH IS THE OS - do show flash
+      #+begin_src cisco
+	# show flash:/
+      #+end_src
+
+      - show nvram:/ - shows the files saved in the non-volatile memory
+      #+begin_src cisco
+	# show nvram:/
+      #+end_src
+
+      - the DO command (goes one level down)
 
 *** [2.5.2] Alter the running configuration
     - the "reload" command
@@ -189,29 +217,58 @@
     - the "erase startup-config" command (have to reload to take effect)
       + will delete the startup config
       + useable when a startup config is messed up
+      + when the startup config is deleted, a default configuration is loaded
+    #+begin_src cisco
+	# erase startup-config
+    #+end_src
     
 *** [2.5.4] Capturing the configuration to a text file
     - needs a puTTy sht
+    - can copy a session using a terminal emulation software
 
 ** [2.6] Ports and addresses
 *** [2.6.1] Ports and addresses
+    - lecture notes
+      + currently used but is slowly transitioning to IPv6
+      + is 32bits
+	|--------+--------+--------+--------+--------------------------------|
+	| ____   | ____   | ____   | ____   |                                |
+	|--------+--------+--------+--------+--------------------------------|
+	| octets |        |        |        |                                |
+	| 1st    | 2nd    | 3rd    | 4th    |                                |
+	| 0-255  | 0-255  | 0-255  | 0-255  |                                |
+	| 8 bits | 8 bits | 8 bits | 8 bits | = 32bits (represent in binary) |
+	|--------+--------+--------+--------+--------------------------------|
+    - IPv6 is 128 bits
+
+    - APIPA (automatic private ....)
+      + used if walang dhcp
+      + has limited use, but can stil be used
+
+    - ADV STUD
     - IP Addresses
-	- primarily used to enable devices to locate one another
+      - primarily used to enable devices to locate one another
     - IPv4
-	- dotted decimal notation
-	- represented by four numbers (between 0 and 255) seperated by a period
-	- assigned to individual devices in a network
+      - dotted decimal notation
+      - represented by four numbers (between 0 and 255) seperated by a period
+      - assigned to individual devices in a network
     - IPv4 subnet mask
-	- is a 32-bit value that differentials the network portion of the address from the hosts portion
-	- together the IPv4, the subnet mask determines which subnet a device is a member
+      - is a 32-bit value that differentials the network portion of the address from the hosts portion
+      - together the IPv4, the subnet mask determines which subnet a device is a member
     - IPv6
-	- more recent version of IPv4
-	- is replacing the more common IPv4
-	- are 128 bits in length and written as a string HEXADECIMAL values
-	- represented by 4 single HEXADECIMAL digit (total of 32)
-	- seperated by a colon, not case-sensitive
-	- Ex. 2001:db8:acad:10::10
+      - more recent version of IPv4
+      - is replacing the more common IPv4
+      - are 128 bits in length and written as a string HEXADECIMAL values
+      - represented by 4 single HEXADECIMAL digit (total of 32)
+      - seperated by a colon, not case-sensitive
+      - Ex. 2001:db8:acad:10::10
 *** [2.6.2] Interfaces and ports
+    - lecture notes
+      + each network media has each own use-cases:
+	- speed
+	- distance
+	- environment
+	- cost
     - (network interface is a point of intersecrion between a computer and a network)
     - A cable connecting to the interface must adhere to match the physical standards of the interface
     - SVIs (switch virtual interfaces)
@@ -223,7 +280,7 @@
       + used to translate IP adresses to domain name
 *** [2.7.2] Automatic IP Address Configuration for End Devices
     - default
-    - uses DHCP
+    - uses DHCP 
       + enables automatic IPv4 adress configuration for every end device that is DHCP-enabled
       + used to obtain a IP address automatically and Obtain DNS server address automatically
       + IPv6 uses DHCPv6 and SLAAC (Stateless Address Autoconfiguration)
@@ -235,6 +292,10 @@
 	(config-if)# ip address IPADDRESSHERE SUBNETMASKHERE
 	(config-if)# no shutdown
       #+end_src
+    - SVI is VLAN1
+    - Vlan
+      + the only port that has address
+      + holds the ip address of the switch
 *** other
     - How to find the subnet?
       + IP: 192.168.0.10
@@ -243,3 +304,16 @@
 	- then the subnet of the address is 192.168.0.0
       + if the subnet mask is: 255.255.0.0
 	- then the subnet is: 192.168.0.0
+*** DO - in class 
+    - hostname sw1
+    - password cisco
+    - privileged user mode - lock - enable secret class
+    - banner
+    - ASSIGNMENT
+      - 2.5.5
+      - 2.9.1
+      
+*** best practices
+    - lock the console port
+    - encrypt password
+    - put banner
