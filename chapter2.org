@@ -14,14 +14,14 @@
     |----------+----------------------------------------------------------------------------|
 
 *** [2.1.2] GUI
-    an environment of graphical icons
-    requires less knowledge of the underlying command structure that governs the OS
-    does not provide all the capabilities of the CLI
+    - an environment of graphical icons
+    - requires less knowledge of the underlying command structure that governs the OS
+    - does not provide all the capabilities of the CLI
 
     *OPERATING SYSTEMS ON ROUTERS ARE COMMONLY CALLED AS FIRMWARE
 
 *** [2.1.3] Purpose of an OS
-    Cisco devices run on Cisco IOS
+    - Cisco devices run on Cisco IOS
 
 *** [2.1.4] Access methods
     |--------------------+-------------------------------------------------------------------------------------------------|
@@ -35,7 +35,7 @@
     |                    |                                                                                                 |
     | Telnet             | insecure SSH, does not encrypt                                                                  |
     |--------------------+-------------------------------------------------------------------------------------------------|
-    * some devices may have an AUXILIARY PORT. There are used to establish remote connections over a telephone connection using a modem. Somewhat similar to console connection since it is out of band and does not require any networking device to be configured or available.
+    * some devices may have an AUXILIARY PORT. They are used to establish remote connections over a telephone connection using a modem. Somewhat similar to console connection since it is out of band and does not require any networking device to be configured or available.
     * out-of-band - means dedicated channel for device maintenance purposes only
 
 *** [2.1.5] Terminal Emulation Programs
@@ -48,7 +48,7 @@
             with the symbol ">"
             cannot change the configuration of the device in this mode but can execute basic monitoring commands
         2. Priveleged EXEC mode 
-            with the symbol "*"
+            with the symbol "#"
             can execute configuration commands to the device
             higher configuration modes can only be accessed through this mode
 
@@ -81,7 +81,7 @@
 
 ** [2.3] The Command Stucture
 *** [2.3.1] basic IOS command structure
-    tldr: Keyword + argument = command
+    tldr: prompt + command + (Keyword | argument) = command
 
     Keyword
         - a keyword defined by the OS
