@@ -52,7 +52,7 @@
       + IP is a protocol with similar function to an envelope. It is responsible for sending a message from the source to destination over one or more networks
 *** [3.1.8] Message size
     - (in f2f communication) sentences are limited in size, relative to what a person can process at one time
-    - (in networks) messages are broken into indivdual pieces that meet both the minimum and maximum size requirements
+**** (in networks) messages are broken into indivdual pieces that meet both the minimum and maximum size requirements
       + frames
 	+ rules that govern the size of the pieces of data
 	+ if messages are too short or too long, it is disregarded
