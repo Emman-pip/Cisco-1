@@ -217,20 +217,20 @@
 
     
 *** [1.4.3] the internet
-    a.k.a internetwork -  collection of interconnected networks
-    not owned by any individual or group
-    organizations that help maintain the structure and stardardization of internet protocols and processes:
+    - a.k.a internetwork -  collection of interconnected networks
+    - not owned by any individual or group
+    - organizations that help maintain the structure and stardardization of internet protocols and processes:
 	1. Internet Engineering Task Force (IETF)
 	2. Internet Corporation for Assigned Names and Numbers (ICANN)
 	3. Internet Architecture Board (IAB)
 
 *** [1.4.4] Intranets and Extranets
-    intranet
-    private connections of LANs ans WANs that belongs to a private organization
-    designed to only be accessible to the organization's members, employees, etc.
+    - intranet
+      - private connections of LANs ans WANs that belongs to a private organization
+      - designed to only be accessible to the organization's members, employees, etc.
 
-    extranet
-    for people outside the organization, to give them secure and safe access.
+    - extranet
+      -for people outside the organization, to give them secure and safe access.
     
 ** [1.5] Internet connections
 
@@ -277,7 +277,7 @@
     ** The choice of connection varies depending on the geographical location and the service provider availability
 
 *** [1.5.3] Businesses internet connections
-    businesses require higher bandwidths, sooo...
+    - businesses require higher bandwidths, sooo...
     #+name: common connection options for businesses
     | type of connection    | description                                                                   |
     |-----------------------+-------------------------------------------------------------------------------|
@@ -309,9 +309,9 @@
 ** [1.6] Reliable networks
 
 *** [1.6.1] Network architecture
-    this term refers to, in some context, to the technologies that support the infrastuctures and the programmed services and rules, or protocols, that move the data across the network
+    - this term refers to, in some context, to the technologies that support the infrastuctures and the programmed services and rules, or protocols, that move the data across the network
 
-    4 basic characteristics to meet user expectation when it comes to network tolerance
+    - 4 basic characteristics to meet user expectation when it comes to network tolerance
 
     1. Fault tolerance
     2. Scalability
@@ -321,30 +321,28 @@
 *** [1.6.2] Fault tolerance
     what is a fault tolerant network?
 
-    a network that minimizes data loss during transit
-    limits the affected devices when devices fail
-    allows quick recovery of data/routes
-    has redundancy (multiple paths between source and destination to help when one path fails)
+    - a network that minimizes data loss during transit
+    - limits the affected devices when devices fail
+    - allows quick recovery of data/routes
+    - has redundancy (multiple paths between source and destination to help when one path fails)
 
-    packet switching
-    splits traffic into packets that are routed over a shared network
-    allows redundancy
+    - packet switching
+      + splits traffic into packets that are routed over a shared network
+      + allows redundancy
 
 *** [1.6.3] Scalability
     what is a scalable network?
-
-    a network that is able to quickly expand to support new users and applications(without degrading performace)
-    designers accept standards and protocols
+    - a network that is able to quickly expand to support new users and applications(without degrading performace)
+    - designers accept standards and protocols
     
     
 *** [1.6.4] QoS (quality of service)
     an increasing requirement of today
 
-    congestion
-    when the demand for the bandwidth exceeds the amount available
-
-    when congestion happens, the devices will hold the packets until it is able to be transmitted to its destination
-    webpages are usually low in priority, while voice over IP is high priority
+    - congestion
+      + when the demand for the bandwidth exceeds the amount available
+      + when congestion happens, the devices will hold the packets until it is able to be transmitted to its destination
+      + webpages are usually low in priority, while voice over IP is high priority
 
     
 *** [1.6.5] Network security
@@ -375,25 +373,25 @@
     - cloud computing
 
 *** [1.7.2] Bring your own device (BYOD)
-    enables users to bring their own personal device to access information and communicate across a business or campus network
-    means by any device, with any ownership, used anywhere
+    - enables users to bring their own personal device to access information and communicate across a business or campus network
+    - means by any device, with any ownership, used anywhere
 
 *** [1.7.3] Online colaboration
-    networks enabled collaboration with no regard to the physical distance
+    - networks enabled collaboration with no regard to the physical distance
 
 *** [1.7.4] Video communications
-    video used for communications
-    a powerful tool for communication (video conferencing)
+    - video used for communications
+    - a powerful tool for communication (video conferencing)
 
 *** [1.7.6] Cloud computing
-    one of the ways we can store data
-    allows us to create backups in servers over the internet
-    is possible because of data centers
+    - one of the ways we can store data
+    - allows us to create backups in servers over the internet
+    - is possible because of data centers
 
-    data centers
-    are facilities that are used to house computer systems and related components
-    can occupy a room of a building, one or more floors, or even a whole warehouse.
-    very expensive to build and maintain
+    - data centers
+      + are facilities that are used to house computer systems and related components
+      + can occupy a room of a building, one or more floors, or even a whole warehouse.
+      + very expensive to build and maintain
 
     #+name: types of clouds
     | type             | description                                                                  |
@@ -455,12 +453,12 @@
 *** [1.8.2] security solutions
     basic security components for a home or small office network
 
-    antivirus and antispyware
-    - protect end devices from getting infected with malicious software
+    - antivirus and antispyware
+      + protect end devices from getting infected with malicious software
 
-    firewall filtering
-    - blocks unautorized access into and out a network
-    - includes host-based firewalls
+    - firewall filtering
+      + blocks unautorized access into and out a network
+      + includes host-based firewalls
 
     #+name: network security in larger networks
     | name                               | description                                                                 |
