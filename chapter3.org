@@ -14,22 +14,21 @@
     - Channel
       + consists of the media that provide the pathway over which the message travel from source destination
 *** [3.1.3] Communication protocols
-    - protocols
-      + govern communication over a network
+    - protocols + govern communication over a network
     - two people can communicate through:
-      + message source -> tranmitter -> transmission medion -> receiver -> message destination
+      + message source -> transmitter -> transmission medium -> receiver -> message destination
       + message -> signal -> _________ -> signal -> message
     - before communication, the 'how' to communicate must be agreed upon
-      + then, decide the format in which the message will be transmitted
+    - then, decide the format in which the message will be transmitted
 *** [3.1.4] Rule establishment
     - rules that govern the conversation: protocols
     - protocols must account for the following requirements to successfully deliver a message that is understood by the receiver
       + indentified sender and receiver
       + common language and grammar
       + speed and timing of delivery
-      + confrmation or acknowledgement requirement
+      + confirmation or acknowledgement requirement
 *** [3.1.5] Network protocol requirements
-    - in addition to indentifying source and destinatio, computer network protocols also define the details of how a message is transmitted across a network.
+    - in addition to indentifying source and destination, computer network protocols also define the details of how a message is transmitted across a network
     - network protocols include the following requirements like:
       + message encoding
       + message formatting and encapsulation
@@ -37,8 +36,8 @@
       + message timing
       + message delivery options
 *** [3.1.6] Message encoding
-    - encoding is the process of converting indormation into another acceptable form (for transmission)
-    - decoding is th reverse process (done to interpret the information)
+    - encoding is the process of converting information into another acceptable form (for transmission)
+    - decoding is the reverse process (done to interpret the information)
     - encoding between hosts must be in an appropriate format for the medium
     - messages sent are converted to bits by the sending host then encoded into a pattern of voltages on copper wires, infared lights in optical fibers, or microwaves for wireless systems. Then the destination host receives and decodes the signals to interpret the message
     - Example:
@@ -193,8 +192,26 @@
 
 *** [3.3.4] TCP/IP protocol suite
     - popular evolutions of the internet protocol suite
+***** services per layer
+    - application layer
+      + name system
+      + hosting config
+      + email
+      + file transfer
+      + web and web service
+    - transport layer
+      + connection-oriented
+      + connectionless
+    - internet layer
+      + IP
+      + messaging
+      + routing protocols
+    - network access layer
+      + address resolution
+      + data link protocols
     [[./media/TCPIPE.png]]
-    - two important aspects of the suite for ventors and manufacturers
+    
+    - two important aspects of the suite for vendors and manufacturers
       + Open standard protocol suite
 	- freely available to the public and can be used by any venter on their hardware and software
       + standards-based protocol suite
@@ -222,7 +239,6 @@
 ****** Email
     - SMTP
       + simple mail transfer protocol
-      + enables clients ro send email to a mail server
       + enables servers to send email to ther servers
     - POP3
       + post office protocol version 3
@@ -235,7 +251,7 @@
     - FTP
       + file transfer protocol
       + enable a user to access and transfet files to and from another host over a network
-      + a reliable connection-orianted and acknowledged filed delivery protocol
+      + a reliable connection-oriented and acknowledged files delivery protocol
     - SFTP
       + SSH file transfer protocol
       + extenstion to secure shell protocol
@@ -290,7 +306,7 @@
     - ICMPv6
       + ICMP for IPv6
     - ICMPv6 ND
-      + ICMPv5 Neighbor discovery
+      + ICMPv6 Neighbor discovery
       + includes four protocol messages that are used for address resolution and duplicate address detection
 
 ****** routing protocols
@@ -360,7 +376,7 @@
 	
 ** [3.5] Reference models
 
-*** benefirs of using a layered model
+*** benefits of using a layered model
     - models are used to visualized thinking about a network
     - there are two layered models that are used to descibe network operations:
       + OSI reference model
@@ -374,7 +390,7 @@
     #+NAME: OSI REFERENCE MODEL
     | oso model layer  | description                                                                                                                                                                          |
     |------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | 7 - application  | contains protocols used for process-toprocess communications                                                                                                                         |
+    | 7 - application  | contains protocols used for process-to-process communications                                                                                                                        |
     |                  |                                                                                                                                                                                      |
     | 6 - presentation | provides common representation of the data transferred between application layer services                                                                                            |
     |                  |                                                                                                                                                                                      |
@@ -400,7 +416,7 @@
     |                    |                                                                        |
     | 3 - transport      | supports communication between various devices across diverse networks |
     |                    |                                                                        |
-    | 2 - internet       | determines th best path through the network                            |
+    | 2 - internet       | determines the best path through the network                           |
     |                    |                                                                        |
     | 1 - network access | controls the hardware devices and media that make up the network       |
     |--------------------+------------------------------------------------------------------------|
@@ -477,9 +493,10 @@
 	*** the subnet mask (IPv4) or prefix-length(IPv6) is used to identify the network portion of an IP address from the host portion
 *** [3.7.4] Role of the Data link (Layer 2) layer addresses: Same IP Network
     - when the sender and receiver of the IP packet are ont he same network, the data link frame is sent directly to the receiving device
-    - on anethernet network, data link addresses are known as Ethernet Media Access Control (MAC) addresses
+    - on an ethernet network, data link addresses are known as Ethernet Media Access Control (MAC) addresses
 **** MAC (Media Access Control) addresses
     - are physically embedded on the ethernet NIC
+    - cannot be changed
 ***** types
 	- source MAC address
 	  + Ethernet MAC address of the sending device
