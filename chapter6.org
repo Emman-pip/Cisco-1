@@ -1,0 +1,77 @@
+* [6] Data link layer
+
+
+** [6.1] Purpose of the Data Link Layer
+*** [6.1.1] The Data Link Layer
+    - the data link layer is the OSI model (LAYER 2)
+    - *prepares the network data for the physical network*
+    - responsible for the *network interface card* to *NIC* communications
+    #+NAME: things data link layer does
+    | description                                                                                                              |
+    |--------------------------------------------------------------------------------------------------------------------------|
+    | Enable upper layers to access the media (upper layers are unaware of the type of media that is used to forward the data) |
+    |                                                                                                                          |
+    | accepts data (usually Layer 3 packets), and *encapsulates them into Layer 2 frames*                                      |
+    |                                                                                                                          |
+    | controls how data is placed and received on the media                                                                    |
+    |                                                                                                                          |
+    | received encadulated data (usually layer 3 packets) and directs them to the upper-layer protocol                         |
+    |                                                                                                                          |
+    | performs error detection and rejects any corrupt frame                                                                   |
+    |--------------------------------------------------------------------------------------------------------------------------|
+**** Node
+    - is a devide that can receive, create, store, or forward data along a communications path
+    - PC, laptor, or could even be an ethernet switch
+    - can be an end device or an intermediary device
+**** shows an example of how the data link layer adds layer 2 eethernet destination and source NIC information to a layer 3 packet
+    [[./media/data-link.png]]
+*** [6.1.2] IEEE 802 LAN/MAN Data Link Sublayers
+**** IEEE 802 LAN/MAN standards
+    - are specific to ethernet LANs, wireless LANs, wireless personal area networkds, and other types of local and metropolitan area networks
+***** The *IEEE 802 LAN/MAN data link layer* consists of the two sub layers
+	1. *Logical Link layer*
+	   - *IEEE 802.2*
+	   - sublayer communicates between the networking software at the upper layers and the device hardware lower layers
+	   - places information in the frame that identifies which network layer protocol is being used for the frame
+	   - allows multiple layer 3 protocols ( such as IPv4, IPv6) to use the same network interface and media
+	   - *takes the network protocol data, then adds layer 2 control information to help deliver the packet to the destination node*
+	     
+	2. *Media Access Control*
+	   - implements the data link layer in hardware
+	   - *IEEE 802.3, 802.11, or 802.15* (?, WLAN, Bluetooth)
+	   - responsible for *data encapsulation* and media access control
+	   - *provices data link layer addressing*
+	   - *integrated with physical layer technologies*
+	   - controls the NIC and other hardware responsible for sending and receiving data on the wired or wireless LAN/MAN medium
+	     
+****** MAC sublayer provides the following
+	- frame delimiting
+	  + provice synchronization between the transmitting and receiving nodes
+	  + provices important delimiters to identify fields within a frame
+	- addressing
+	  + provides source and destination addressing for transporting layer 2 frame between devices on the same shared medium
+	- error detection
+	  + includes a *trailer* (FCS) used to detect transmission errors
+	     [[./media/MAC-LLC.png]]
+
+*** [6.1.3] Providing Access to Media
+    - at each hop along the path, a *router* performs the following layer 2 functions:
+      1. Accepts a frame from a medium
+      2. De-encapsulates the frame
+      3. Re-encapsulates the packet into a new frame
+      4. Forwards the new frame appropriate to the mefium of that segment of the physical network
+
+*** [6.1.4] Data Link Layer Standards
+    - protocols in the data link layer are generally not defined by RFCs (unlink the TCP/IP suite)
+    - IETF maintains the functional protocols in the upper layers, but do not define the functions and operation of the TCP/IP network access layer
+    - *Engineering organizations that define open standards and protocols that apply to the network access layer*
+      + *IEEE (Institute of Electrical and Electronics Engineers)*
+      + *ITU (Intenational Telecommunication Union)*
+      + *ISO (International Organization for Standardization)*
+      + *ANSI (American National Standards Institute)*
+
+** [6.2] Topologies
+
+*** [6.2.1] Physical and Logical topologies
+
+    Discussed already in earlier modules...
