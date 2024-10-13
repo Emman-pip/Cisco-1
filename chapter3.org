@@ -127,7 +127,7 @@
       |                       |                                                                                                            |
       | error detection       | used to determine if data became corrupted during transmission (provided by Ethernet, IPv4, IPv6, and TCP) |
       |                       |                                                                                                            |
-      | application interface | contains informationused for process-to-process communication between network applications (HTTP, HTTPS)   |
+      | application interface | contains information used for process-to-process communication between network applications (HTTP, HTTPS)  |
       |-----------------------+------------------------------------------------------------------------------------------------------------|
 *** [3.2.3] Protocol interaction
     - messages sent over a network typically requires several protocols
@@ -137,7 +137,7 @@
 	- governs the way the webserver communicates with the web client
 	- defines the content and formtting of the requests and responses to be exchanged
 	- both the web server and the client implement the protocol
-	- HTTP relies on other protocols to gover how the messages are transported between the web server and client
+	- HTTP relies on other protocols to govern how the messages are transported between the web server and client
       + TCP (Transmission control protocol)
 	- manages the individual conversations
 	- responsible for reliable delivery of the information and managing flow control between end devices
@@ -160,22 +160,22 @@
 *** [3.3.2] Evolution of protocol suites
     - [[./media/protocol-suites.png]]
     - during the evolution of network communications and the internet, there were several competing suites;
-      + TCP/IP (internet protocol suite)
+      + *TCP/IP (internet protocol suite)*
 	- most common and relevant protocol today
 	- open standard protocol maintained by the Internet Engineering Task Force (IETF)
 
-      + OSI (open systems interconnection) protocols
+      + *OSI (open systems interconnection) protocols*
 	- family of protocols developed jointly in 1977 (international organization for standardization (ISO) and international telecommunications union(ITU))
 	- included the OSI model
 	  - 7 layer reference model
 	- mainly known today for its layed model
 	- have been largely replaced by the internet protocol suite
 	  
-      + Apple talk
+      + *Apple talk*
 	- short-lived proprietary protocol suite released by apple Inc (1985)
 	- apple eventuall adapted TCP/IP
 
-      + Novell Netware
+      + *Novell Netware*
 	- short-lived proprietary protocol suite and network operating system developed by Novell Inc (1983)
 	- used the IPX network protocol
 	- eventually (1995) adapted TCP/IP
@@ -183,103 +183,103 @@
 *** [3.3.3] TCP/IP protocol example
     [[./media/TCPIP.png]] 
     - TCP/IP protocols are available for the following layers:
-      + application
-      + transport
-      + internet
-    - it is not used in the ACCESS LAYER
+      + *application*
+      + *transport*
+      + *internet*
+    - *it is not used in the ACCESS LAYER*
       + access layers are: LAN, WLAN
       + it is responsible for delibering the IP packet over the physical medium
 
 *** [3.3.4] TCP/IP protocol suite
     - popular evolutions of the internet protocol suite
 ***** services per layer
-    - application layer
+    - *application layer*
       + name system
       + hosting config
       + email
       + file transfer
       + web and web service
-    - transport layer
+    - *transport layer*
       + connection-oriented
       + connectionless
-    - internet layer
+    - *internet layer*
       + IP
       + messaging
       + routing protocols
-    - network access layer
+    - *network access layer*
       + address resolution
       + data link protocols
     [[./media/TCPIPE.png]]
     
     - two important aspects of the suite for vendors and manufacturers
-      + Open standard protocol suite
+      + *Open standard protocol suite*
 	- freely available to the public and can be used by any venter on their hardware and software
-      + standards-based protocol suite
+      + *standards-based protocol suite*
 	- has been endorsed by the networking industry and approved by a standards organization (ensures interoperability with other manufacturers)
 
 **** brief descriptions of some protocols
 ***** Application layer
 
 ****** Name system
-    - DNS
+    - *DNS*
       + domain name system
       + translates domain names to IP addresses
 
 ****** host config
-    - DHCPv4
+    - *DHCPv4*
       + dynamic host configuration protocol for IPv6
       + dynamically assigns IPv4 addressing information to DHCPv4 clients at start-up and allows the addresses to be re-used when no longer needed
-    - DHCPv6
+    - *DHCPv6*
       + DHCP for IPv6
       + dynamically assigned IPv6 addessing information to DHCPv6 clients at start up
-    - SLAAC
+    - *SLAAC*
       + stateless address autoconfiguration
       + a method that allows a device to obtain its IPv6 addressing information without using a DHCPv6 server
 
 ****** Email
-    - SMTP
+    - *SMTP*
       + simple mail transfer protocol
       + enables servers to send email to ther servers
-    - POP3
+    - *POP3*
       + post office protocol version 3
       + enables clients to retrieve email from a mail server and download the email to the client's local mail application
-    - IMAP
+    - *IMAP*
       + Internet message access protocol
       + enables clients to access email stored on a mail server as well as maintaining email on the server
 
 ****** File transfer
-    - FTP
+    - *FTP*
       + file transfer protocol
       + enable a user to access and transfet files to and from another host over a network
       + a reliable connection-oriented and acknowledged files delivery protocol
-    - SFTP
+    - *SFTP*
       + SSH file transfer protocol
       + extenstion to secure shell protocol
       + used to establish a a secure file transfer session in which the file transfer is encrypted
-    - TFTP
+    - *TFTP*
       + trivial file transfer protocol
       + a simple, connectionless file transfer protocol with best-effort unacknowledged file delivery
       + uses less overhead than FTP
 
 ****** web ang web service
-    - HTTP
+    - *HTTP*
       + hypertext transfer protocol
       + set of rules for exchanging text, graphic images, sournd video, and other multimedia files on the WWW
-    - HTTPS
+    - *HTTPS*
       + HTTP secure
       + secure form of http that encrypts data that is exchanged over the WWW
-    - REST
+    - *REST*
       + representationl state transfer
       + web service that uses application programming interfaces and http requests to create web applications
 
 ***** transport layer
 ****** connection-oriented
-    - TCP
+    - *TCP*
       + transmission control protocol
       + enables reliable communication between processes runnnning on seperate hosts and provides readable, acknowledged transmissions that confirm successful delivery
 
 ****** connectionless
-    - UDP
+    - *UDP*
       + user datagram protocol
       + enables a process running on one host to send packages to a process running on another host
       + does not confirm successful user datagranm transmission
@@ -287,50 +287,50 @@
 ***** internet layer
 
 ****** internet protocol
-    - IPv4
+    - *IPv4*
       + internet protocol version 4
       + receives message segments from the transport layer, packages messages into packets, and addresses packets for end-to-end delivery over a network
       + uses a 32-bit address
-    - IPv6
+    - *IPv6*
       + IP version 6
       + uses to IPv4 but uses a 128-bit address
-    - NAT
+    - *NAT*
       + Network address translation
       + translates IPv4 addressesa from a private network into globally unique public IPv4 addresses
 	
 
 ****** messaging
-    - ICMPv4
+    - *ICMPv4*
       + internet control messge protocol
       + provides feedback from a destination host to a source about erres in packet delivery
-    - ICMPv6
+    - *ICMPv6*
       + ICMP for IPv6
-    - ICMPv6 ND
+    - *ICMPv6 ND*
       + ICMPv6 Neighbor discovery
       + includes four protocol messages that are used for address resolution and duplicate address detection
 
 ****** routing protocols
-    - OSPF
+    - *OSPF*
       + open shortest path first
       + link-state routing protocol that uses a heirarchical design based on areas
       + open standard interior routing protocol
-    - EIGRP
+    - *EIGRP*
       + enhanced interior gateway routing protocol
       + open standard routing protocol developed by Cisco that uses a composite metric based on bandwidth, delay, load, and reliability
-    - BGP
+    - *BGP*
       + border gateway protocol
-      + open standard ecterior gateway routing prtocol used between internet service providers
+      + open standard exterior gateway routing protocol used between internet service providers
       + commonly used between ISPs and their large private clients to exchange routing information
 
 ***** network access layer
 ****** address resolution
-    - ARP
+    - *ARP*
       + address resolution protocol
       + provides dynamic address mapping between an IPv4 address and a hardware address
 ****** data link protocols
-    - ethernet
+    - *ethernet*
       + defines the rules for wiring and signaling standards of the network access layer
-    - WLAN
+    - *WLAN*
       + wireless local area network
       + defines rules for wireless signaling across the 2.4Ghz and 5Ghz radio frequencies
 
@@ -342,34 +342,34 @@
   
 *** [3.4.2] internet standards
     [[./media/NETORGS.png]]
-    - ISOC
+    - *ISOC*
       + responsible for promoting the open development and evolution of internet use
-    - IAB
+    - *IAB*
       + responsible for the overall mangement and development of internet standards
-    - IETF
+    - *IETF*
       + develops,updates, and maintains internet and TCP/IP technologies
       + RFC (request for comments) documents
 	- process and documents for developing new protocols and updating existing protocols
-    - IRTF
+    - *IRTF*
       + focused on long-term research related to internet and TCP/IP protocols
       + ex. anti-spam research group (ASRG), crypto forum research group (CFRG), and peer-to-peer reserach group (P2PRG)
 
 **** next figure displays organizations involved with the developmet and support of TCP/IP and include IANA and ICANN
     [[./media/IANA.png]]
-    - internet corporation for assigned names and numbers
+    - *internet corporation for assigned names and numbers*
       + coordinates IP address allocation, management of domain names, and assignment of other information used in tcp/ip protocols
-    - internet assigned numbers authority
+    - *internet assigned numbers authority*
       + resposible for overseeing and managing IP address allocation, domain name management, and protocol identifiers for ICANN
 
 *** [3.4.3] Electronic and communications standards
-    - institute of electrical and electronics engineers (IEEE)
+    - *institute of electrical and electronics engineers (IEEE)*
       + organizaiton of electrical andelectronics and engineers dedicated to advancing technological innovation and creating standards in a wide area of industries
       + includes 802.3 ethernet, 802.11 wlan standard
-    - Electronic industries alliance (IEA)
+    - *Electronic industries alliance (IEA)*
       + best known for its standard relating to electrical wiring, connectors, and the 19-inch racks used to mount networking devices
-    - telecommunications industry association (TIA)
+    - *telecommunications industry association (TIA)*
       + responsible for developing communication standards in variery of areas
-    - international telecommunications union-telecommunication standardization sector (ITU-T)
+    - *international telecommunications union-telecommunication standardization sector (ITU-T)*
       - one of the largest and oldest standards organizaions
       - defines standards for video compression, internet protocol television (IPTV), and broadband communications (DSL)
 
@@ -425,7 +425,7 @@
     [[./media/TCPOSI.png]]
     
     - OSI layer 3, network layer, maps directly to the internet later (2nd layer of TCP/IP model)
-      + used to descibe protodcols that address and route messages through an internetwork
+      + used to describe protodcols that address and route messages through an internetwork
     - transport layer
       + describes general services and functions that provide ordered and reliable delivery opf data betwen source and destination hosts
     - application layer and application, presentation, session layers
@@ -451,15 +451,15 @@
     - PDU is the form a piece of data takes at any layer of the network
     - UDP PDUs are called 'datagrams' or 'IP datagrams
 **** Types of PDU
-    - Data
+    - *Data*
       + at the application layer
-    - Segment
+    - *Segment*
       + at the transport layer
-    - Packet
+    - *Packet*
       + at the network layer
-    - Frame
+    - *Frame*
       + at the data link layer
-    - Bits
+    - *Bits*
       + at the physical layer
 **** encapsulation process
       + information added to data as it is passed down the protocol stack
@@ -495,16 +495,16 @@
     - when the sender and receiver of the IP packet are ont he same network, the data link frame is sent directly to the receiving device
     - on an ethernet network, data link addresses are known as Ethernet Media Access Control (MAC) addresses
 **** MAC (Media Access Control) addresses
-    - are physically embedded on the ethernet NIC
+    - *are physically embedded on the ethernet NIC*
     - cannot be changed
 ***** types
-	- source MAC address
+	- *source MAC address*
 	  + Ethernet MAC address of the sending device
-	- destination MAC address
+	- *destination MAC address*
 	  + when the receiving device is on a different network, the sending device will use the ethernet MAC address of the default gateway or router
 *** [3.7.8] Data link (layer 2) addresses
     - purpose is of the data link address is to deliver the data link address is to deliver the data link frame from one network interface to another network interface on the same network
-    - before an IP packaet can be sent over a wired or wireless network, it MUST BE ENCAPSULATE IN A DATA LINK FRAME, so it can be transmitted over the physical medium
+    - before an IP packet can be sent over a wired or wireless network, it MUST BE ENCAPSULATE IN A DATA LINK FRAME, so it can be transmitted over the physical medium
 **** IP packet is encapsulated in a data link frame that contains the following information
     - Source data link address
       + physical address of the NIC (sender)

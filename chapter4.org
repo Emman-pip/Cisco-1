@@ -1,0 +1,305 @@
+* Chapter 4: Physical Layer
+
+First layer of the OSI model
+** [4.1.1]The physical connection 
+   physical connections are estalished first
+    - wired network
+      + a network where data is transmitted through a physical cable
+    - Wireless connectivity
+      + data is transmitted using radio waves
+      + devices connect to a wireless access point(AP) or wireless router
+*** Wireless router
+    components of a wireless router
+    [[./media/router.png]]
+    1. wireless antennas
+    2. several ethernet switchports
+    3. internet port
+
+*** Network Interface Cards (NIC)
+    - connect a device to the network
+    - one device could have multiple NICs
+    - ethernet NICs
+      + used for wired connections
+    - wireless local area network (WLAN) NICs
+      + used for wireless connections
+ 
+** [4.2] The Physical Layer Characteristics
+*** [4.2.1] The Physical Layer
+    - transports bits that make up data link frame across the network media
+    - upper layers of the OSI layers - designed by software engineers and computer scientists
+    - services and protocols in the TCP/IP suite - defined by the Internet Engineering Task Force (IETF)
+    [[./media/governing.png]]
+    - governing bodies
+      + International organization for standardization (ISO)
+      + telecommunications industry association /electronic industries association (TIA/EIA)
+      + International telecommunication union (ITU)
+      + americal national standards institute (ANSI)
+      + Institure of Electrical and Electronics Engineeers
+      + National telecommunications regulatory authorities including the federal communication commission (FCC) in the USE and Eutopean Telecommunications Standards Institute (ETSI)
+*** [4.2.2] Physical components
+    the physical later standards address three functional areas:
+    - physical components
+      + the electronic hardware devices, media, and other connectors that transmit the signals that represent the bits (e.g. NICs, interfaces, connectors, cable materials)
+    - encoding
+    - signaling
+
+*** [4.2.3] Encoding
+    - method of converting a stram of data bits into a predefined code
+    - code
+      + grouping of bits used to provide a predictable pattern that can be recognized by both the sender and the receiver
+    - encoding is the method or pattern used to represent digital information
+
+*** [4.2.4]signaling
+    - way that bits are represented (the electrical, optical, and wireless signal that represent 1 and 0)
+
+*** [4.2.5] Bandwidth
+    - capacity at which a medium can carry data
+    - digital bandwidth
+      + measures the amount of data that can flow from one place to another in a given amount of time
+    - measures in kbps, Mbps, Gbps
+    - factors that determines practical bandwidth of a network
+      + properties of the physical media
+      + technologies chosen for signaling and detecting network signals
+    [[./media/bandwidth.png]]
+*** [4.2.6] terms used to measure the quality of bandwidth
+    - latency
+      + amount of time, including delays, for data to travel from one given point to another
+    - throughput
+      + measure of the transfer of bits across the media over a given period of time
+      + usually does not match the specified bandwidth in the physical layer inplementation (usually lower than the bandwidth)
+      + influenced by (1) the amount of traffic, (2) the type of traffice, and (3) the latency created by the number of network devices encountered between source and destination
+    - goodput
+      + measurement to assess the transfer of usable data transferred over a given period of time
+      + throuput - traffic overhead
+      + always lower than the through put
+
+** [4.3] Copper cabling
+Oldest and most used media for communications
+*** [4.3.1]Characteristics of copper cabling
+    - Data is transferred through electrical pulses
+    - signal deteriorates the farther it travels
+**** Timing and voltage values of electrical pulses are susceptible to the interference from two sources:
+    1. Electromagnetic interference (EMI) or radio frequency interferencd (RFI)
+       - can distort or corrupt data signals being carried by a copper media
+       - potential sources of EMI and RFI include radio waves, electromagnetic devices
+    2. Crosstalk
+       - is s disturbance caused by the elctric or magnetic fields of a signal on one wire to the signal in an adjacent wire
+       - magnetic fields formed influce each other
+**** to counter such interferences
+    1. for EMI and RFI
+       - use of metallic shoulding and proper grounding connections
+    2. for crosstalk
+       - twisted pairs of wires which effectively cancels the crosstalk
+
+*** [4.3.2] types of copper cabling
+    - Unshielded twisted pair (UTP)
+      - most common networking media
+      - color coded
+    - Shielded twisted pair (STP
+      + better noise protection but more expensive and difficult to install
+    - Coaxial cable)
+      + coax for short
+      + gets its name from the fact that there are two conductors that share the same axis
+      + commonly used in wireless installations and cable internet installation
+
+** [4.4] UTP Cabling
+
+*** [4.4.1] Properties of UTP Cabling
+    - cancellation
+      + designers pair wires so that they are the exact opposite of one another
+      + this results in the two magnetic fields cancelling each other and also calcel out anu outside EMI and RFI signals
+    - varying the number of twists per wire pair
+      + different number of twists per twisted pair
+      + this enhances the cancellation effect
+
+*** [4.4.2] UTP Cabling Standards
+    - conforms to the standards established by the TIA/EIA
+    - categorized according to its performance (bandwidth)
+    - 5e is now the minimal acceptable cable type, with cat6 being the recommended type for new building installations
+**** three categories of UTP cable
+| Category          | description                                                            |
+|-------------------+------------------------------------------------------------------------|
+| category 3        | used for voice comunications, later used for data transmission         |
+|                   |                                                                        |
+| category 5 and 5e | used for data transmission                                             |
+|                   | cat5 supports 100Mbps                                                  |
+|                   | cat5e supports 1000Mbps                                                |
+|                   |                                                                        |
+| category 6        | has an added seperator between each wire pair to support higher speeds |
+|                   | supports up to 10Gbps                                                  |
+|                   |                                                                        |
+| cat 7             | supports up to 10Gbps                                                  |
+|                   |                                                                        |
+| cat 8             | supports up to 40Gbps                                                  |
+|-------------------+------------------------------------------------------------------------|
+
+[[./media/utps.png]]
+
+**** RJ-45 UTP Plugs
+    - UTP is usually terminated with an RJ-45 connector
+    - if terminated improperly, could cause layer 1 performace degradation
+
+**** RJ-45
+    - where rj-45 is connected
+
+*** [4.4.3] straight through and crossover UTP cables
+    - ethenet straight through
+      + most common type of networking cable
+      + host to a switch and a switch to a router
+    - ethernet crossover
+      + used to interconnect similar devices
+    - rollover cable
+      + cisco proprietary
+
+      + used to connect a workstation to a router or switch console port
+
+	* auto mdix automatically detect the cable type and make the internal connection
+    [[./media/crossover.png]]
+
+**** Cable types and standards
+|---------------------------+-------------------------------|
+| cable type                | standard                      |
+|---------------------------+-------------------------------|
+| ethernet straight through | both ends with T568A or T568B |
+| ethernet crossover        | different ends                |
+| rollover                  | cisco proprietary             |
+|---------------------------+-------------------------------|
+
+** [4.5] Fiber optic cabling
+
+*** [4.5.1] Properties of fiber-optic cabling
+   use of light pulses to transfer data in the speed of light
+      
+
+*** [4.5.2]types of fiber media
+**** single-mode fiber (SMF)
+    - consists of a very small core and uses expensive laser technology to send a single ray of light
+    - popular in long distance situations (hundreds of kilometers)
+      [[./media/smf.png]]
+**** multimode fiber (MMF)
+    - consists of a larger core and uses LAD emitters to send light pulses
+    - light enters at different angles
+    - can be powered by low-cost LEDs
+      [[./media/mmf.png]]
+
+*** [4.5.3] fiber-optic cabling usage
+Fiber optic cabling is used in four types of industries
+    - enterprise networks
+      + used for backbone cabling applications and interconnecting infrastructure devices
+    - fiber-to-the-home (FTTH)
+      + used to provide always-on brodband services to homes and small businesses
+    - long-haul networks
+      + used by service providers to connect countries and cities
+    - submarine cable networks
+      + used to provide reliable high-speed, high-capacity,solutions capable of surviving under the sea at transoceanic distances
+
+	
+*** [4.5.4] Fiber-optic connectors
+    - terminates the end of an optical fiber
+    - decided based on the equipment used
+
+**** Straight-tip(ST) connectors
+    - one of the first connector types used
+    - locks securely with a 'twist-on/twist-off' bayonet-style mechanism
+      
+**** Subscriber Connector (SC) Connectors
+    - square connectors or standard connectors
+    - widely adopted LAN and WAN connector
+    - uses a push-pull mechanism to ensure positive insertion
+    - used with multimode and single-mode fiber
+      
+**** Lucent Connector (LC) Simplex Connectors
+    - smaller version of the SC connector
+    - sometimes little or local connectors
+    - quickly growing in popularity due to their smaller size
+      
+**** Duplex Multimode LC Connector
+    - similar to LC simplex connector but uses a duplex connector
+
+Recent inventions led to the duplex connector.
+
+*** [4.5.5] Fiber Patch Cords
+    - are required for interconnecting infrastructure devices
+    - use of color to ditinguish between single-mode and multi-mode patch cords
+    - *YELLOW* for *single mode* and *ORANGE (or AQUA)* for *multimode* fiber cables
+      _print("Hello world")_
+     
+**** SC-SC multimode patch cord
+    [[./media/sc-sc.png]]
+
+**** LC-LC single-mode patch cord
+    [[./media/lc-lc.png]]
+
+**** ST-LC multimode patch cord
+    [[./media/st-lc.png]]
+    
+**** SC-ST single-mode patch cord
+    [[./media/sc-st.png]]
+
+    
+*** [4.5.6] Fiber versus Copper
+    - fiber optics are primarily used as backbone cabling for high-speed traffic, point-to-point connections between data distributionn facilities
+      + used because it does not conduct electricity, have low signal loss, and well suited for specific use cases
+
+    #+NAME: UTP and Fiber-optic cabiling comparison
+    | implementation issues          | UTP cabling               | fiber-optic cabling   |
+    |--------------------------------+---------------------------+-----------------------|
+    | bandwidth supported            | 10Mb/s - 10Gb/s           | 10Mb/s - 100 Gb/s     |
+    | distance                       | Relatively short (1-100m) | long (100,000 meters) |
+    | immunity to EMI and RFI        | low                       | immune                |
+    | immunity to electrical hazards | low                       | immune                |
+    | media and connector costs      | lowest                    | highest               |
+    | installation skills required   | lowest                    | highest               |
+    | safety precautions             | lowest                    | highest               |
+
+** [4.6] Wireless media
+
+*** [4.6.1] Properties of wireless media
+    - carry electromagnetic signals that represent binary digits of data communication (through radio or microwave frequencies)
+    - provide greatest mobility options of all media
+    - currently, the *primary way users connect to home and enterprise networks*
+      
+**** limitations
+    - coverage area
+      + work well in open areas, not much with obstructions (walls in buildings and structures)
+    - interference
+      + susceptible ot interference
+      + can be distrupted by common devices such as household cordless phones, flourescent lights, microwave ovens, and other wireless communications
+    - security
+      + unauthorized users can access if in the coverage area
+    - shared medium
+      + WLAN operate in half-duplex
+      + only one device can send  or receive at a time
+      + will result in reduced bandwidth if many users
+	
+*** [4.6.2] Types of wireless media
+Physical layer specifications are applied to areas that include the following:
+    - data to radio signal encoding
+    - frequency and power of transmission
+    - signal reception and decoding requirements
+    - antenna design and construction
+
+**** wireless standards
+    - *Wi-Fi (IEEE 802.11)*
+      + wireless lan (WLAN)
+      + uses a contention-based protocol (carrier sense multiple access/collision avoidance)
+      + uses a wireless NIC
+    - *Bluetooth (IEEE 802.15)*
+      + wireless personal area network (WPAN) standard
+      + uses a device pairing process to communicate over distances from 1 to 100 meters
+    - *WiMAX (IEEE 802.16)*
+      + Worldwide interoperability for machine access
+      + uses a point-to-multipoint topology to provide wireless broadband access
+    - *Zigbee (IEEE 802.15.4)*
+      + specification for low data rate, short range and long battery life
+      + used for low-data rata, low-power communications
+      + typically used for industrial and internet of things environments
+
+*** [4.6.3] Wireless LAN
+a common wireless data implementation is enabling devices to connect wirelessly via a LAN.
+In general, a WLAN required the following network devices
+    - Wireless Access point (AP)
+      + concentrate the wireless signals from users and connect to the ecisting copper-based network infrastructure
+    - Wireless NIC adapters
+      + provode wireless communication capability to the network hosts
+	
