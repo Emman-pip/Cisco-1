@@ -23,13 +23,13 @@
     - is a devide that can receive, create, store, or forward data along a communications path
     - PC, laptor, or could even be an ethernet switch
     - can be an end device or an intermediary device
-**** shows an example of how the data link layer adds layer 2 eethernet destination and source NIC information to a layer 3 packet
+**** shows an example of how the data link layer adds layer 2 ethernet destination and source NIC information to a layer 3 packet
     [[./media/data-link.png]]
 *** [6.1.2] IEEE 802 LAN/MAN Data Link Sublayers
 **** IEEE 802 LAN/MAN standards
     - are specific to ethernet LANs, wireless LANs, wireless personal area networkds, and other types of local and metropolitan area networks
 ***** The *IEEE 802 LAN/MAN data link layer* consists of the two sub layers
-	1. *Logical Link layer*
+	1. *Logical Link Control layer*
 	   - *IEEE 802.2*
 	   - sublayer communicates between the networking software at the upper layers and the device hardware lower layers
 	   - places information in the frame that identifies which network layer protocol is being used for the frame
@@ -73,5 +73,155 @@
 ** [6.2] Topologies
 
 *** [6.2.1] Physical and Logical topologies
+    - physical topology
+      + identifies the physical connections and how end devices and intermediary devices are connected
+      + include specific device location such as room number and location on the equipment rack
+      + usually point-to-point or star
+    - logical topology
+      + the way a network treansfers frames from one node to the next
+      + identifies virtual connections using device interfaces and layer 3 IP addressing schemes
 
-    Discussed already in earlier modules...
+*** [6.2.2] WAN Topologies
+    - *Point-to-point*
+      [[./media/point.png]]
+      + simplest and most common topology
+      + consists of a permanent link between two endpoints
+    - *Hub and spoke*
+      [[./media/hubandspoke.png]]
+      + WAN version of the start topology
+      + central site interconnects branch sites through point-to-point links
+      + no exchange of data without going through the central site
+    - *Mesh*
+      [[./media/mesh.png]]
+      + high redundancy
+      + high availability but requires that every end system is interconnected
+      + administrative and physcial costs might be significant
+      + each point is essentially a point-to-point to the other node
+
+*** [6.2.3] Point-to-point WAN topology
+    - directly connect two nodes
+    - PPP (point to point protocol)
+
+*** [6.2.4] LAN Topologies
+    - connected using star or extended star topologies
+    - *extended star*
+      + interconnecting multiple ethernet switches
+      + easy to install and very scalable
+      + easy to troubleshoot
+    - *star*
+      + end devices are connected to a central intermediary device
+
+	
+**** Legacy LAN Topologies
+    [[./media/physicaltop.png]]
+    - *Bus*
+      + all end systems are chained to each other and termianated in some form on each end
+      + switches are not required to interconnect6 the end devices
+      + legacy ethernet networks were often bus topologies using coax cables because it was inexpensive and easy to set up
+    - *Ring*
+      + end systems aer connected to their respective neighbor forming a ring
+      + des not need to be terminated like the bus tooplogy
+      + Legacy *Fiber Distributed Data Interface (FDDI)* and *Token Ring* networks used ring topologies
+
+*** [6.2.5] Half and Full duplex communication
+    - *half-duplex communication*
+      + both devices can transmit and receive on the same media *but not simultaneously*
+      + WLAN and legacy bus with ethernet hubs use half duplex
+    - *full-duplex communication*
+      + devices can simultaneously transmit and receive on the shared media
+      + data link layer assumes that the media is available for transmission for both notdes at any time
+      + ethernet switches operate in full-duplex mode by default
+
+*** [6.2.6] Access control methods
+    - *multiaccess network*
+      + a network that can have two or more devices attempting to access the network simultaneously
+**** rules that govern how multiaccess networks share the physcial media
+    - *contention-based access*
+      + all nodes are operating in *half-duplex*
+      + only one device can send at a time
+      + *Carrier Sense Multiple Access / collision detection (CSMA/CD)*
+      + *Carrier Sense Multiuple Access / collision avoidance (CSMA/CA)*
+    - *controlled access*
+      + each node has its own time to use the medium
+      + inefficient because a device must wait for its turn to access the medium
+      + logacy token ring and legacy ARCNET used this access control method
+
+	/today, most networks use full duplex, no access methods required/
+
+*** [6.2.7] contention-based access (CSMA/CD)
+    - Wireless lan (CSMA/CA)
+    - legacy bus topology ethernet lan (CSMA/CD)
+    - legaxy ethernet LAN using a hub (CSMA/CD)
+    - /waits until the media is free to use/
+      
+
+*** [6.2.8] contention-based acces (CSMA/CA)
+    - used by 802.11 *WLAN*
+    - carrier sense multiple access with collision avoidance
+    - attempts to avoid collisions instead of detecting it
+    - time duration is transmitted
+
+** [6.3] Data link frame
+
+*** [6.3.1] The frame
+    - the layer 2 prepared a packet for transport across the media(by encapsulating it with *header and trailer*)
+    - data link protocol is responsible for *NIC-to-NIC* communications within the same network
+    - each frame type has three basic parts
+      + header
+      + data
+      + trailer
+
+*** [6.3.2] Frame fields
+    - framing breaks the straema into decipherable groupings, with control information inserted in the header and trailer as values in different fields
+    - this format give the physical signals a structure that are by recognized nodes and devoded into packets at the destination
+      [[./media/trailer.png]]
+
+      |--------------+-----------------------------+----------------------------+---------+---------------+---------+------------|
+      | preamble (8) | mac (6)                     | IP (6)                     | TCP (2) | DATA (4-1500) | FCS (4) | Frame stop |
+      |--------------+-----------------------------+----------------------------+---------+---------------+---------+------------|
+      |              | destination MAC then source | source IP then destination |         |               |         |            |
+
+    - *Frame start and stop indicator flags*
+      + used to identify the beginning and end limits of the frame
+    - *Addressing*
+      + indicates the source and destination nodes on the media
+    - *type*
+      + identifies the layer 3 protocol in the data field
+    - *Control*
+      + identifies the special flow control services such as QoS
+      + QoS gives forwarding priority to certain types of messages
+    - *Data*
+      + contains the frame payload 
+    - *error detection*
+      + included after the data to form the trailer
+
+**** Frame Check Sequence (FCS)
+    - checks the CRC value, compares it, then determines whether the frame experienced data transmission errors
+    - provides a method for the receiving node to determine whether the frame experienced transmission errors
+
+**** Cyclic Redundancy Check (CRC)
+    - logical summary of the contents of the frame (created by a transmitting node)
+
+      
+*** [6.3.3] Layer 2 Addresses
+    - called physical addresses
+    - addressing is *contained within the frame header*, specifies the frame destination node on the local network
+    - does *not indicate on what network the device is located*
+    - it is unique to each device
+    - *used only for local delivery*, no meaning beyong the network
+    - 
+
+*** [6.3.4] LAN and WAN Frames
+**** Common WAN protocols
+    - point-to-point protocol (PPP)
+    - high-level data link control (HDLC)
+    - frame relay
+    - asynchronous transfer mode (ATM)
+    - X.25
+    /are now being replaced in the WAN by ethernet/
+**** Ddata link layer protocols
+    - Ethernet
+    - 802.11 wireless
+    - point-to-point protocol (PPP)
+    - HDLC
+    - frame relay
