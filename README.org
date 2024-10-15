@@ -2,10 +2,15 @@
 A repository to save my notes for Cisco 1.
 
 ** Contents:
-|---------+-------------------------------------------|
-| chapter | description                               |
-|---------+-------------------------------------------|
-|       1 | Networking Today                          |
-|       2 | Basic switch and end device configuration |
-|       3 | Protocols                                 |
-|---------+-------------------------------------------|
+|---------+-----------------------------------------------------------|
+| chapter | description                                               |
+|---------+-----------------------------------------------------------|
+|       1 | [[./chapter1.org]]: Networking Today                          |
+|       2 | [[./chapter2.org]]: Basic switch and end device configuration |
+|       3 | [[./chapter3.org]]: Protocols                                 |
+|       4 | [[./chapter4.org]]: Physical layer                            |
+|       5 | [[./chapter5.org]]: Number systems                            |
+|       6 | [[./chapter6.org]]: data link layer                           |
+|       7 | [[./chapter7.org]]: ethernet switching                        |
+|       8 | [[./chapter8.org]]: network layer                             |
+|---------+-----------------------------------------------------------|
