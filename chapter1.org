@@ -63,7 +63,7 @@
 	  - Ex . of client software
 	    Web Browser
 
-    - Types of server software:
+****  Types of server software:
       |-------+----------------------------------------------------------------------------------------------------------------------------------------------|
       | Type  | Description                                                                                                                                  |
       |-------+----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -72,7 +72,7 @@
       | File  | stores corporate and user files in a central location. Client devices access these files using file explorers such as Windows' File Explorer |
       |-------+----------------------------------------------------------------------------------------------------------------------------------------------|
 
-    - Takeaways
+**** Takeaways
       |--------------------------------------------------------------------------|
       | TAKEAWAYS                                                                |
       |--------------------------------------------------------------------------|
@@ -176,7 +176,7 @@
     - illustrate the devices, ports, and the addressing scheme of the network.
     - shows which devices are connected to intermediary devices and what network media is used
 
-    
+      
 
 ** [1.4] Common types of networks
 *** [1.4.1] Networks of many sizes
@@ -274,7 +274,7 @@
     |                    | useful for mobile access while travelling                                                                                |
     |--------------------+--------------------------------------------------------------------------------------------------------------------------|
 
-    ** The choice of connection varies depending on the geographical location and the service provider availability
+    /The choice of connection varies depending on the geographical location and the service provider availability/
 
 *** [1.5.3] Businesses internet connections
     - businesses require higher bandwidths, sooo...
@@ -311,8 +311,7 @@
 *** [1.6.1] Network architecture
     - this term refers to, in some context, to the technologies that support the infrastuctures and the programmed services and rules, or protocols, that move the data across the network
 
-    - 4 basic characteristics to meet user expectation when it comes to network tolerance
-
+**** 4 basic characteristics to meet user expectation when it comes to network tolerance
     1. Fault tolerance
     2. Scalability
     3. Quality of service (QoS)
@@ -415,21 +414,20 @@
     |------------------+------------------------------------------------------------------------------|
 
 *** [1.7.7] technology trends in the home
-    smart home technology
-    integrated into everyday appliances
+    - smart home technology
+    - integrated into everyday appliances
     
 *** [1.7.8] powerline networking
-    integrating networking with powerline(electricity, outlets)
-    not a substiture for dedicated network cabling but an alternative when data network cables are not accessible or wireless connections are not possible or effective
+    - integrating networking with powerline(electricity, outlets)
+    - not a substiture for dedicated network cabling but an alternative when data network cables are not accessible or wireless connections are not possible or effective
     
 *** [1.7.9] wireless broadband
-    wireless internet service provider (WISP)
-    an ISP that connects subscribers to a designated access point using wireless technology (usually a hotspot
-    can be found in home wireless local area networks (WLAN)
-    commonly found in rural areas where DSL or cable services are not available
+    - wireless internet service provider (WISP)
+      + an ISP that connects subscribers to a designated access point using wireless technology (usually a hotspot
+    - can be found in home wireless local area networks (WLAN)
+    - commonly found in rural areas where DSL or cable services are not available
     
 ** [1.8] Network security
-
 *** [1.8.1] Security threats
     #+name: several external threats
     | threat name                   | description                                                   |
@@ -449,7 +447,7 @@
     | identity theft                | steals login credentials to steal data                        |
     |-------------------------------+---------------------------------------------------------------|
 
-    internal threats include the acts in which an 'insider' does malicious things to the network or some sht
+    /internal threats include the acts in which an 'insider' does malicious things to the network or some sht/
 
 *** [1.8.2] security solutions
     basic security components for a home or small office network
