@@ -130,7 +130,7 @@
 	(config-line)# password PASSWORDHERE
 	(config-line)# login
 	(config-line)# end
-	#end_src
+	#+end_src
 **** securing access methods
 	- console, ssh, telnet - can set passwords for here through - password {actual password}
         - for SSH - more secure in internet
