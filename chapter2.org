@@ -18,7 +18,7 @@
     - requires less knowledge of the underlying command structure that governs the OS
     - does not provide all the capabilities of the CLI
 
-    *OPERATING SYSTEMS ON ROUTERS ARE COMMONLY CALLED AS FIRMWARE
+    /OPERATING SYSTEMS ON ROUTERS ARE COMMONLY CALLED AS FIRMWARE/
 
 *** [2.1.3] Purpose of an OS
     - Cisco devices run on Cisco IOS
@@ -35,8 +35,8 @@
     |                    |                                                                                                 |
     | Telnet             | insecure SSH, does not encrypt                                                                  |
     |--------------------+-------------------------------------------------------------------------------------------------|
-    * some devices may have an AUXILIARY PORT. They are used to establish remote connections over a telephone connection using a modem. Somewhat similar to console connection since it is out of band and does not require any networking device to be configured or available.
-    * out-of-band - means dedicated channel for device maintenance purposes only
+    /some devices may have an AUXILIARY PORT. They are used to establish remote connections over a telephone connection using a modem. Somewhat similar to console connection since it is out of band and does not require any networking device to be configured or available./
+    /out-of-band - means dedicated channel for device maintenance purposes only/
 
 *** [2.1.5] Terminal Emulation Programs
     Putty, TeraTerm, SecureCRT
@@ -45,19 +45,18 @@
 *** [2.2.1] Primary Command Modes
     Cisco IOS software seperates management access into two command modes:
         1. User EXEC mode 
-            with the symbol ">"
-            cannot change the configuration of the device in this mode but can execute basic monitoring commands
+            + with the symbol ">"
+            + cannot change the configuration of the device in this mode but can execute basic monitoring commands
         2. Priveleged EXEC mode 
-            with the symbol "#"
-            can execute configuration commands to the device
-            higher configuration modes can only be accessed through this mode
+            + with the symbol "#"
+            + can execute configuration commands to the device
+            + higher configuration modes can only be accessed through this mode
 
 *** [2.2.2] Configuration mode and subconfiguration modes
-    To configure a device, a user must enter the GLOBAL CONFIGURATION MODE (global config mode)
-    identified by a prompt ending in (config)*
-    
-    From the global config mode, the user can enter different subconfigs.
-    two common subconfig modes:
+    + To configure a device, a user must enter the GLOBAL CONFIGURATION MODE (global config mode)
+    + identified by a prompt ending in (config)*
+    + From the global config mode, the user can enter different subconfigs.
+**** two common subconfig modes:
     |------------------------------+------------------------------------------------------------+----------------|
     | subconfig mode               | desc                                                       | prompt         |
     |------------------------------+------------------------------------------------------------+----------------|
@@ -89,6 +88,7 @@
     Argument
         - a keyword defined by the user
 	- defined by the user
+
 *** [2.3.2] IOS command syntax check
     typixal unix-like stufff..... with emacs bindings !!! >:(
 *** [2.3.3] IOS help features
@@ -132,12 +132,12 @@
 	(config-line)# end
 	#+end_src
 **** securing access methods
-	- console, ssh, telnet - can set passwords for here through - password {actual password}
-        - for SSH - more secure in internet
-	  + 0 15 switches - 15 is number of possible conenctions
-	  + 0 4  routers - 4 is number of possible connections
-        - for telnet - are allowed both in internet and local internets
-        can also set password in modes through -> enable secret 
+    - console, ssh, telnet - can set passwords for here through - password {actual password}
+    - for SSH - more secure in internet
+	+ 0 15 switches - 15 is number of possible conenctions
+	+ 0 4  routers - 4 is number of possible connections
+    - for telnet - are allowed both in internet and local internets
+    can also set password in modes through -> enable secret 
 *** [2.4.4] Encrypting passwords
     - encrypt password on the running config (not included the passwords sent over the network)
 	#+begin_src bash
@@ -159,7 +159,6 @@
     #+end_src
 
 ** [2.5] Save configurations
-
 *** [2.5.1] Configuration files
 
     - storage devices in computers
@@ -211,7 +210,7 @@
       - the DO command (goes one level down)
 
 *** [2.5.2] Alter the running configuration
-    - the "reload" command
+    - the ~reload~ command
       + if the running configuration is configured in an undesirable manner, the "reload" command can be used to go back to the last saved startup-config
       + will cause downtime for the network
     - the "erase startup-config" command (have to reload to take effect)
@@ -241,11 +240,11 @@
 	|--------+--------+--------+--------+--------------------------------|
     - IPv6 is 128 bits
 
-    - APIPA (automatic private ....)
+    - *APIPA (automatic private IP addressing)*
       + used if walang dhcp
-      + has limited use, but can stil be used
+      + has limited use, but can still be used
 
-    - ADV STUD
+**** ADV STUD
     - IP Addresses
       - primarily used to enable devices to locate one another
     - IPv4
@@ -271,11 +270,12 @@
 	- cost
     - (network interface is a point of intersecrion between a computer and a network)
     - A cable connecting to the interface must adhere to match the physical standards of the interface
-    - SVIs (switch virtual interfaces)
+    - *SVIs (switch virtual interfaces)*
       + a virtualized interphase because of the lack of physical hardware on the device associated with an interface
+
 ** Configure IP Addressing
 *** [2.7.1] Manual IP Address Configuration for End Devices
-    - IPv4 addresse information can be entered to devices manually or automatically (using DHCP)
+    - IPv4 addresses information can be entered to devices manually or automatically (using DHCP)
     - DNS server addresses are the IPv4 and IPv6 addresses of the Domain Name System (DNS servers)
       + used to translate IP adresses to domain name
 *** [2.7.2] Automatic IP Address Configuration for End Devices
@@ -314,6 +314,8 @@
       - 2.9.1
       
 *** best practices
+    - put hostname
     - lock the console port
     - encrypt password
     - put banner
+
