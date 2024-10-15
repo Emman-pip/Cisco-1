@@ -188,7 +188,7 @@
       + *internet*
     - *it is not used in the ACCESS LAYER*
       + access layers are: LAN, WLAN
-      + it is responsible for delibering the IP packet over the physical medium
+      + it is responsible for delivering the IP packet over the physical medium
 
 *** [3.3.4] TCP/IP protocol suite
     - popular evolutions of the internet protocol suite
@@ -227,7 +227,7 @@
 
 ****** host config
     - *DHCPv4*
-      + dynamic host configuration protocol for IPv6
+      + dynamic host configuration protocol for IPv4
       + dynamically assigns IPv4 addressing information to DHCPv4 clients at start-up and allows the addresses to be re-used when no longer needed
     - *DHCPv6*
       + DHCP for IPv6
@@ -321,7 +321,7 @@
       + border gateway protocol
       + open standard exterior gateway routing protocol used between internet service providers
       + commonly used between ISPs and their large private clients to exchange routing information
-
+	
 ***** network access layer
 ****** address resolution
     - *ARP*
@@ -365,7 +365,7 @@
     - *institute of electrical and electronics engineers (IEEE)*
       + organizaiton of electrical andelectronics and engineers dedicated to advancing technological innovation and creating standards in a wide area of industries
       + includes 802.3 ethernet, 802.11 wlan standard
-    - *Electronic industries alliance (IEA)*
+    - *Electronic industries alliance (EIA)*
       + best known for its standard relating to electrical wiring, connectors, and the 19-inch racks used to mount networking devices
     - *telecommunications industry association (TIA)*
       + responsible for developing communication standards in variery of areas
@@ -484,15 +484,15 @@
 	- source IP address
 	- destination IP address
 ***** IP addresses contain two parts
-	- Network portion (IPv4) or Prefix (IPv6)
+	- *Network portion (IPv4) or Prefix (IPv6)*
 	  + left-most part of the address
 	  + all devices on the same networ will have the same network portion of the address
-	- Host portion (IPv4) or Interface ID (IP6)
+	- *Host portion (IPv4) or Interface ID (IPv6)*
 	  + the remaining part of the address that identifies the specific device on the network
 	  + unique for each device or interface onthe network
-	*** the subnet mask (IPv4) or prefix-length(IPv6) is used to identify the network portion of an IP address from the host portion
+	/the subnet mask (IPv4) or prefix-length(IPv6) is used to identify the network portion of an IP address from the host portion/
 *** [3.7.4] Role of the Data link (Layer 2) layer addresses: Same IP Network
-    - when the sender and receiver of the IP packet are ont he same network, the data link frame is sent directly to the receiving device
+    - when the sender and receiver of the IP packet are on the same network, the data link frame is sent directly to the receiving device
     - on an ethernet network, data link addresses are known as Ethernet Media Access Control (MAC) addresses
 **** MAC (Media Access Control) addresses
     - *are physically embedded on the ethernet NIC*
@@ -504,7 +504,7 @@
 	  + when the receiving device is on a different network, the sending device will use the ethernet MAC address of the default gateway or router
 *** [3.7.8] Data link (layer 2) addresses
     - purpose is of the data link address is to deliver the data link address is to deliver the data link frame from one network interface to another network interface on the same network
-    - before an IP packet can be sent over a wired or wireless network, it MUST BE ENCAPSULATE IN A DATA LINK FRAME, so it can be transmitted over the physical medium
+    - before an IP packet can be sent over a wired or wireless network, it MUST BE ENCAPSULATED IN A DATA LINK FRAME, so it can be transmitted over the physical medium
 **** IP packet is encapsulated in a data link frame that contains the following information
     - Source data link address
       + physical address of the NIC (sender)
