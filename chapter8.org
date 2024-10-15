@@ -1,0 +1,189 @@
+* Network Layer
+
+** [8.1] Network Layer Characteristics
+
+*** [8.1.1] The network layer
+    - allow end devices to exchange data across networks
+
+**** four basic operations of the network layer
+    - *addressing end devices*
+      + must be configured with a unique IP address for identification
+    - *encapsulation*
+      + encapsulates the PDU segment into a packet
+      + adds IP header information
+    - *routing*
+      + provides services to direct the packets to a destination host on another network
+      + *hop (each router a packet crosses to reach the destination)*
+    - *de-encapsulation*
+      + comparing IP information
+      + performed by the destination host of the IP packet
+
+*** [8.1.2] IP Encapsulation
+    - encapsulates the transport layer by adding an ip header
+    - IP address source and destination remains the same unless translated using Network Address Translation (NAT) for IPv4
+
+*** [8.1.3] Characteristics of IP
+    designed with a low overhead: only provides what is necessary to deliver a packet from a source to destination
+
+**** basic characteristics of IP
+    - *connectionless*
+      + no connection with the destination established before sending data packets
+    - *best effort*
+      + unreliable since packet delivery is not guaranteed
+    - *media independent*
+      + operation is independent of the network medium
+
+*** [8.1.4] Connectionless
+    - *no dedicated end-to-end connection* before the data is sent
+
+*** [8.1.5] Best effort
+    - does not require additonal fields in the header to maintain an established connection
+    - does not know if the receiving end exists or functions
+    - *does not guarantee that packets will be delivered or received*
+
+*** [8.1.6] Media Independent
+    - *operates independently of the media that carries the data (802.3, 802.11, 802.15, 802.15.4, etc)*
+    - although it does not consider media, /it considers *MTU* (maximum transmission unit)/
+      + *maximum size of the packet*
+      + passed by the data link layer to the layer 3, used to determine how large packets can be
+    - *fragmentating the packet or fragmentation* + splitting up an IPv4 packet due to a network medium with a smaller maximum transmision unit + causes latency
+      + there is *no fragmentation in IPv6*
+
+** [8.2] IPv4 packet
+*** [8.2.1] IPv4 Packet Header
+    - one of the primary network layer communication protocols
+    - used to ensure that this packet is delivered to its next stop on the way to its destination
+    - consists of fields containing important information about the packet
+
+*** [8.2.2] IPv4 packet header fields
+    - read from left to right, top down
+      [[./media/packetheader.png]]
+      
+**** Significant fields
+    1. version
+       + contains a 4 bit binary value (0100 for IPv4 and 0110 for IPv6)
+    2. differentiated services or DiffSserv (DS)
+       + formerly type of service field
+       + 8 bit field  used to determine the priority of each packet
+       + sign most significant bits of the DiffServ field are the *differentiated services code point (DSCP)* and the last two bits are *explicity congestion notification (ECN)*
+    3. Time to live
+       + contains an 8-bit binary value that is used to limit the lifetime of a packet
+       + decreased each time it is processed by a router
+       + if reaches zero, discarded by router and sendds and internet control message protocol
+    4. protocol
+       + used to identify the next level protocol
+       + 8 bit binary value indicates the data payload type inside the packet
+       + ICMP, TCP, UDP
+    5. header checksum
+       + used to detect corruption in the IPv4 header
+    6. Source IPv4 address
+       + 32 bit binary value that reporesents the source of the packet
+       + *always a unicast*
+    7. destination IPv4 address
+       + represents the destination IPv4 address of the packet
+
+** [8.3.1] IPv6 Packet
+*** [8.3.1] Limitation of IPv4
+    - address depletion
+      + limited number of uniques public addresses available (4billion)
+    - lack of end-to-end connectivity
+      + NAT is implemented within IPv4 networks, problematic for technologies that require end-to-end connectivity
+    - increased network complexity
+      + NAT creates additional complexity in the network
+      + creating latency and making troubleshooting more difficult
+*** [8.3.2] IPv6 Overview
+    - IETF grew concerned about the issues with IPv4 and began to look for a replacement. 
+**** Improvements
+    - *increased address space (128 bit hierarchical addressing) (340undecillion)*
+    - *improved packet handling*
+    - *eliminates need for NAT*
+*** [8.3.3] IPv4 Packet Header Fields in the IPv6 packet header
+    [[./media/ipv461.png]]
+    [[./media/ipv462.png]]
+**** Headers
+    - version
+      + 0110 for ipv6
+    - traffic class
+      + equivalent to DS
+    - flow label
+      + all packets with the same flow label receive the same type of handling by routers
+    - payload length
+      + 16 bit, indicates the data portion or payload of the IPv6 packet
+    - next header
+      + equivalent of the protocol field in IPv4
+    - hop limit
+      + TTL equivalent
+    - source IPv6 address
+      + 128 bit field that identifies the IPv6 address of the sending host
+    - destination IPv6 address
+      + identifies the IPv6 address of the receiving host
+
+** [8.4] Host a host routes
+*** [8.4.1] Host forwarding decision
+**** a host can send a packet to the following
+    - itself
+      + 127.0.0.1 or ::1
+    - local host
+    - remote host
+*** [8.4.2] Default Gateway
+    - network device (router or layer 4 switch) that can route traffic to other networks
+    - default gateway is like a door way
+    - It has a local IP address in the same address range as other hosts on the local network.
+    - It can accept data into the local network and forward data out of the local network.
+    - It routes traffic to other networks.
+
+    /required to send traffic outside of the local network/
+
+*** [8.4.4] Host Routing Tables
+    - ~route print~ or ~netstat -r~ to display the host routing configuration
+    [[./media/netstat.png]]
+    
+**** sections displayed
+    - interface list
+      + lists MAC address and assigned interface number of every network capable of interface on the host, including ethernet, wifi, and bluetooth adapters
+    - IPv4 route table
+      + lists all know IPv4 (direct connections, local network, and local default routes)
+    - IPv5 route table
+      + lists all know IPv6 (direct connections, local network, and local default routes)
+	
+** [8.5] Intro to routing
+
+*** [8.5.1] Router Packet Forwading
+    - [[./media/routingtab.png]]
+
+*** [8.5.2] IP router routing table
+    stores three types of route entries
+    - directly connected networks
+      + active router interfaces
+      + routers add a directly connected route when an interface is configured with an IP address and is activated
+    - remote networks
+      + connected to other routers
+      + routers learn about remote networks either by being explicityly configured by an administrator or by exchanging route information using a dynamic routing protocol
+    - default route
+      + a gateway of last resort
+      + used when there is no better mathc in the IP routing table
+
+*** [8.5.3] Static routing
+    - manually configured
+    - command is: ~hostname(config)# ip route remote-network-ip-address subnet-mask-of-remote ip-address-of-next-hop-router~
+      [[./media/staticroute.png]]
+
+*** [8.5.4] Dynamic routing
+    - allows the routers to sutomatically learn about remote networks
+    - OSPF, EIGRP
+      /note: it is common to combine both static routes and dynamic routing protocols
+
+*** [8.5.6] introduction to an IPv4 routing table
+    [[./media/routing.png]]
+
+    - command to show the ip table of a router ~hostname# show ip route~
+    - L
+      + Directly connected local interface IP address
+    - C
+      + Directly connected network
+    - S
+      + Static route was manually configured by an administrator
+    - O
+      + OSPF
+    - D
+      + EIGRP
