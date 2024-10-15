@@ -69,7 +69,7 @@
     3. Time to live
        + contains an 8-bit binary value that is used to limit the lifetime of a packet
        + decreased each time it is processed by a router
-       + if reaches zero, discarded by router and sendds and internet control message protocol
+       + if reaches zero, discarded by router and sends and internet control message protocol
     4. protocol
        + used to identify the next level protocol
        + 8 bit binary value indicates the data payload type inside the packet
@@ -84,11 +84,11 @@
 
 ** [8.3.1] IPv6 Packet
 *** [8.3.1] Limitation of IPv4
-    - address depletion
+    - *address depletion*
       + limited number of uniques public addresses available (4billion)
-    - lack of end-to-end connectivity
+    - *lack of end-to-end connectivity*
       + NAT is implemented within IPv4 networks, problematic for technologies that require end-to-end connectivity
-    - increased network complexity
+    - *increased network complexity*
       + NAT creates additional complexity in the network
       + creating latency and making troubleshooting more difficult
 *** [8.3.2] IPv6 Overview
@@ -118,7 +118,7 @@
     - destination IPv6 address
       + identifies the IPv6 address of the receiving host
 
-** [8.4] Host a host routes
+** [8.4] Host to host routes
 *** [8.4.1] Host forwarding decision
 **** a host can send a packet to the following
     - itself
@@ -139,12 +139,12 @@
     [[./media/netstat.png]]
     
 **** sections displayed
-    - interface list
+    - *interface list*
       + lists MAC address and assigned interface number of every network capable of interface on the host, including ethernet, wifi, and bluetooth adapters
-    - IPv4 route table
-      + lists all know IPv4 (direct connections, local network, and local default routes)
-    - IPv5 route table
-      + lists all know IPv6 (direct connections, local network, and local default routes)
+    - *IPv4 route table*
+      + lists all known IPv4 (direct connections, local network, and local default routes)
+    - *IPv5 route table*
+      + lists all known IPv6 (direct connections, local network, and local default routes)
 	
 ** [8.5] Intro to routing
 
@@ -153,13 +153,13 @@
 
 *** [8.5.2] IP router routing table
     stores three types of route entries
-    - directly connected networks
+    - *directly connected networks*
       + active router interfaces
       + routers add a directly connected route when an interface is configured with an IP address and is activated
-    - remote networks
+    - *remote networks*
       + connected to other routers
       + routers learn about remote networks either by being explicityly configured by an administrator or by exchanging route information using a dynamic routing protocol
-    - default route
+    - *default route*
       + a gateway of last resort
       + used when there is no better mathc in the IP routing table
 
@@ -187,3 +187,5 @@
       + OSPF
     - D
       + EIGRP
+    - *
+      + default route candidate

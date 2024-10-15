@@ -37,7 +37,7 @@
     [[./media/ethernet-standards.png]]
 
 *** [7.1.4] Ethernet frame fields
-    - *minimum frame size is 65 bytes*
+    - *minimum frame size is 64 bytes*
     - expected *maximum is 1518*
     - *from destination MAC address field to FCS*, the preamble field is not included
 
@@ -174,12 +174,12 @@
 **** Memory Buffering Methods
     | Method             | description                                                                                                                                                                                   |
     |--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | port-based memeory | frames are stored in queues that are linke dto specific incoming and outgoing ports                                                                                                           |
+    | port-based memeory | frames are stored in queues that are linked to specific incoming and outgoing ports                                                                                                           |
     |                    | a frame is transmitted to the outgoind port only when all the frames ahead in the queue have been successfully transmitted                                                                    |
     |                    | delay because of a single frame is possible                                                                                                                                                   |
     |                    | delays are possible even if other frames could be transmitted to open destination ports                                                                                                       |
     |--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | shared memory      | deposits all frames into a common memory buffer shared by all switch ports and amout of buffer memory required by a port is dynamically allocated                                            |
+    | shared memory      | deposits all frames into a common memory buffer shared by all switch ports and amount of buffer memory required by a port is dynamically allocated                                           |
     |                    | frames in the buffer are dynamically linked to the destination port enabling a packet to be received on one port and then transmitted on another port, without moving it to a different queue |
     |--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 *** [7.4.4] Duplex and Speed setting

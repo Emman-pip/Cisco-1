@@ -1,5 +1,4 @@
 * Chapter 4: Physical Layer
-
 First layer of the OSI model
 ** [4.1.1]The physical connection 
    physical connections are estalished first
@@ -25,9 +24,9 @@ First layer of the OSI model
  
 ** [4.2] The Physical Layer Characteristics
 *** [4.2.1] The Physical Layer
-    - *transports bits that make up data link frame across the network media*
+    - transports bits that make up data link frame across the network media
     - upper layers of the OSI layers - designed by software engineers and computer scientists
-    - services and protocols in the TCP/IP suite - defined by the *Internet Engineering Task Force (IETF)*
+    - services and protocols in the TCP/IP suite - defined by the Internet Engineering Task Force (IETF)
     [[./media/governing.png]]
     - governing bodies
       + International organization for standardization (ISO)
@@ -35,13 +34,13 @@ First layer of the OSI model
       + International telecommunication union (ITU)
       + americal national standards institute (ANSI)
       + Institure of Electrical and Electronics Engineeers
-      + National telecommunications regulatory authorities including the federal communication commission (FCC) in the USE and European Telecommunications Standards Institute (ETSI)
+      + National telecommunications regulatory authorities including the federal communication commission (FCC) in the USE and Eutopean Telecommunications Standards Institute (ETSI)
 *** [4.2.2] Physical components
     the physical later standards address three functional areas:
-    - *physical components*
+    - physical components
       + the electronic hardware devices, media, and other connectors that transmit the signals that represent the bits (e.g. NICs, interfaces, connectors, cable materials)
-    - *encoding*
-    - *signaling*
+    - encoding
+    - signaling
 
 *** [4.2.3] Encoding
     - method of converting a stram of data bits into a predefined code
@@ -53,8 +52,8 @@ First layer of the OSI model
     - way that bits are represented (the electrical, optical, and wireless signal that represent 1 and 0)
 
 *** [4.2.5] Bandwidth
-    - *capacity at which a medium can carry data*
-    - *digital bandwidth*
+    - capacity at which a medium can carry data
+    - digital bandwidth
       + measures the amount of data that can flow from one place to another in a given amount of time
     - measures in kbps, Mbps, Gbps
     - factors that determines practical bandwidth of a network
@@ -62,13 +61,13 @@ First layer of the OSI model
       + technologies chosen for signaling and detecting network signals
     [[./media/bandwidth.png]]
 *** [4.2.6] terms used to measure the quality of bandwidth
-    - *latency*
+    - latency
       + amount of time, including delays, for data to travel from one given point to another
-    - *throughput*
+    - throughput
       + measure of the transfer of bits across the media over a given period of time
       + usually does not match the specified bandwidth in the physical layer inplementation (usually lower than the bandwidth)
       + influenced by (1) the amount of traffic, (2) the type of traffice, and (3) the latency created by the number of network devices encountered between source and destination
-    - *goodput*
+    - goodput
       + measurement to assess the transfer of usable data transferred over a given period of time
       + throuput - traffic overhead
       + always lower than the through put
@@ -92,12 +91,12 @@ Oldest and most used media for communications
        - twisted pairs of wires which effectively cancels the crosstalk
 
 *** [4.3.2] types of copper cabling
-    - *Unshielded twisted pair (UTP)*
+    - Unshielded twisted pair (UTP)
       - most common networking media
       - color coded
-    - *Shielded twisted pair (STP*
+    - Shielded twisted pair (STP
       + better noise protection but more expensive and difficult to install
-    - *Coaxial cable*
+    - Coaxial cable)
       + coax for short
       + gets its name from the fact that there are two conductors that share the same axis
       + commonly used in wireless installations and cable internet installation
@@ -105,10 +104,10 @@ Oldest and most used media for communications
 ** [4.4] UTP Cabling
 
 *** [4.4.1] Properties of UTP Cabling
-    - *cancellation*
+    - cancellation
       + designers pair wires so that they are the exact opposite of one another
       + this results in the two magnetic fields cancelling each other and also calcel out anu outside EMI and RFI signals
-    - *varying the number of twists per wire pair*
+    - varying the number of twists per wire pair
       + different number of twists per twisted pair
       + this enhances the cancellation effect
 
@@ -143,17 +142,17 @@ Oldest and most used media for communications
     - where rj-45 is connected
 
 *** [4.4.3] straight through and crossover UTP cables
-    - *ethenet straight-through*
+    - ethenet straight through
       + most common type of networking cable
       + host to a switch and a switch to a router
-    - *ethernet crossover*
+    - ethernet crossover
       + used to interconnect similar devices
-    - *rollover cable*
+    - rollover cable
       + cisco proprietary
+
       + used to connect a workstation to a router or switch console port
 
-	/auto mdix automatically detect the cable type and make the internal connection/
-
+	* auto mdix automatically detect the cable type and make the internal connection
     [[./media/crossover.png]]
 
 **** Cable types and standards
@@ -177,128 +176,26 @@ Oldest and most used media for communications
     - popular in long distance situations (hundreds of kilometers)
       [[./media/smf.png]]
 **** multimode fiber (MMF)
-    - consists of a larger core and uses LED emitters to send light pulses
+    - consists of a larger core and uses LAD emitters to send light pulses
     - light enters at different angles
     - can be powered by low-cost LEDs
       [[./media/mmf.png]]
 
 *** [4.5.3] fiber-optic cabling usage
 Fiber optic cabling is used in four types of industries
-    - *enterprise networks*
+    - enterprise networks
       + used for backbone cabling applications and interconnecting infrastructure devices
-    - *fiber-to-the-home (FTTH)*
+    - fiber-to-the-home (FTTH)
       + used to provide always-on brodband services to homes and small businesses
-    - *long-haul networks*
+    - long-haul networks
       + used by service providers to connect countries and cities
-    - *submarine cable networks*
+    - submarine cable networks
       + used to provide reliable high-speed, high-capacity,solutions capable of surviving under the sea at transoceanic distances
 
+	
 *** [4.5.4] Fiber-optic connectors
     - terminates the end of an optical fiber
     - decided based on the equipment used
 
 **** Straight-tip(ST) connectors
-    - one of the first connector types used
-    - locks securely with a 'twist-on/twist-off' bayonet-style mechanism
-      
-**** Subscriber Connector (SC) Connectors
-    - square connectors or standard connectors
-    - widely adopted LAN and WAN connector
-    - uses a push-pull mechanism to ensure positive insertion
-    - used with multimode and single-mode fiber
-      
-**** Lucent Connector (LC) Simplex Connectors
-    - smaller version of the SC connector
-    - sometimes little or local connectors
-    - quickly growing in popularity due to their smaller size
-      
-**** Duplex Multimode LC Connector
-    - similar to LC simplex connector but uses a duplex connector
-
-Recent inventions led to the duplex connector.
-
-*** [4.5.5] Fiber Patch Cords
-    - are required for interconnecting infrastructure devices
-    - use of color to ditinguish between single-mode and multi-mode patch cords
-    - *YELLOW* for *single mode* and *ORANGE (or AQUA)* for *multimode* fiber cables
-     
-**** SC-SC multimode patch cord
-    [[./media/sc-sc.png]]
-
-**** LC-LC single-mode patch cord
-    [[./media/lc-lc.png]]
-
-**** ST-LC multimode patch cord
-    [[./media/st-lc.png]]
-    
-**** SC-ST single-mode patch cord
-    [[./media/sc-st.png]]
-
-    
-*** [4.5.6] Fiber versus Copper
-    - fiber optics are primarily used as backbone cabling for high-speed traffic, point-to-point connections between data distributionn facilities
-      + used because it does not conduct electricity, have low signal loss, and well suited for specific use cases
-
-    #+NAME: UTP and Fiber-optic cabiling comparison
-    | implementation issues          | UTP cabling               | fiber-optic cabling   |
-    |--------------------------------+---------------------------+-----------------------|
-    | bandwidth supported            | 10Mb/s - 10Gb/s           | 10Mb/s - 100 Gb/s     |
-    | distance                       | Relatively short (1-100m) | long (100,000 meters) |
-    | immunity to EMI and RFI        | low                       | immune                |
-    | immunity to electrical hazards | low                       | immune                |
-    | media and connector costs      | lowest                    | highest               |
-    | installation skills required   | lowest                    | highest               |
-    | safety precautions             | lowest                    | highest               |
-
-** [4.6] Wireless media
-
-*** [4.6.1] Properties of wireless media
-    - carry electromagnetic signals that represent binary digits of data communication (through radio or microwave frequencies)
-    - provide greatest mobility options of all media
-    - currently, the *primary way users connect to home and enterprise networks*
-      
-**** limitations
-    - *coverage area*
-      + work well in open areas, not much with obstructions (walls in buildings and structures)
-    - *interference*
-      + susceptible ot interference
-      + can be distrupted by common devices such as household cordless phones, flourescent lights, microwave ovens, and other wireless communications
-    - *security*
-      + unauthorized users can access if in the coverage area
-    - *shared medium*
-      + WLAN operate in half-duplex
-      + only one device can send  or receive at a time
-      + will result in reduced bandwidth if many users
-	
-*** [4.6.2] Types of wireless media
-Physical layer specifications are applied to areas that include the following:
-    - data to radio signal encoding
-    - frequency and power of transmission
-    - signal reception and decoding requirements
-    - antenna design and construction
-
-**** wireless standards
-    - *Wi-Fi (IEEE 802.11)*
-      + wireless lan (WLAN)
-      + uses a contention-based protocol (carrier sense multiple access/collision avoidance)
-      + uses a wireless NIC
-    - *Bluetooth (IEEE 802.15)*
-      + wireless personal area network (WPAN) standard
-      + uses a device pairing process to communicate over distances from 1 to 100 meters
-    - *WiMAX (IEEE 802.16)*
-      + Worldwide interoperability for machine access
-      + uses a point-to-multipoint topology to provide wireless broadband access
-    - *Zigbee (IEEE 802.15.4)*
-      + specification for low data rate, short range and long battery life
-      + used for low-data rata, low-power communications
-      + typically used for industrial and internet of things environments
-
-*** [4.6.3] Wireless LAN
-    a common wireless data implementation is enabling devices to connect wirelessly via a LAN.
-
-    In general, a WLAN requires the following network devices:
-    - *Wireless Access point (AP)*
-      + concentrate the wireless signals from users and connect to the existing copper-based network infrastructure
-    - *Wireless NIC adapters*
-      + provode wireless communication capability to the network hosts
-	
+    - 

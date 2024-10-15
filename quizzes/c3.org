@@ -1,0 +1,12 @@
+* C3 quiz
+1. responsible for promoting tht open development and evolution of internet use throughout the world
+2. develops, updates, and maintains internet and TCP/IP technologies (including RFC)
+3. Responsible for the overall management and development of internet standards
+4. focused on long-term research related to internet and TCP/IP protocol such as Anti-span research group (ASRG), crypto forum research group (CFRG), and peer-to-peer research group (P2PRG)
+5. organization involved with the development of TCP/IP (give 2)
+6. ____ coordinates IP address allocation, management of domain names, and assignment of other information used in TCP/IP protocols
+7. responsible for overseeing and managing IP address allocation, domain name management, and protocol identifiers for ICANN
+8. Organization best known for its standards relating to electrical wiring, connectors, and the 19-inch racks
+9. organization of electrical engineering and electronics dedicated to advancing technological innocationand creating standards in a wide areaof industries including power and energy. Their contribution includes 802.3 ethernet and 802.11 WLAN standard
+10. organization responsible for developing communication standards in a variety of areas including radio equipment, cellular towers, VoIP devices, satellite communications, and more
+11. one of the largest and oldest communication standards organizations. 

@@ -7,14 +7,14 @@
     - IPv4
       + consists of *four sections* called *octets*
       + each octet contains *8 bits* a total of *32 bits*
-      + IP addresses are divided in to two parts: *network portion*, the first three octets, and *host ID*, the fourth octet
+      + IP addresses are divided in to two parts: *network portion*, the first three octets, and *host portion*, the fourth octet
       + 0-255
 ** [5.2] Hexadecimal
 *** [5.2.1] Hexadecimal and IPv5 Addresses
     - Hexadecinal is base 16
     - used in representing *IPv6 addresses and MAC addresses*
     - format of IPv6
-      + x:x:x:x:x:x:x (0000:0000:0000:0000:0000:0000:0000)
+      + x:x:x:x:x:x:x (0000:0000:0000:0000:0000:0000:0000) (8 hexadecimal digits)
       + each x is a single hextet, 16 bits, or four hexadecimal digits
 
 	
